@@ -1,0 +1,8 @@
+class Wheel {
+  constructor() {
+    
+  }
+  getWheelValue() {
+    
+  }
+}

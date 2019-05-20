@@ -1,0 +1,8 @@
+class Puzzle {
+  constructor() {
+
+  }
+  getPuzzle() {
+    
+  }
+}
