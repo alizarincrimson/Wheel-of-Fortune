@@ -4,5 +4,8 @@ class Player {
     this.totalScore = 0;
     this.roundScore = 0;
   }
+  displayScore() {
+    
+  }
 }
 
