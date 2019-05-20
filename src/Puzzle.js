@@ -1,8 +1,8 @@
-class Wheel {
+class Puzzle {
   constructor(dataFilePath) {
     this.dataFilePath = dataFilePath;
   }
-  getWheelValue() {
+  getPuzzle() {
 
   }
 }
