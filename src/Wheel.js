@@ -1,8 +1,8 @@
 class Wheel {
-  constructor() {
-    
+  constructor(dataFilePath) {
+    this.dataFilePath = dataFilePath;
   }
   getWheelValue() {
-    
+
   }
 }

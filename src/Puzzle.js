@@ -1,8 +1,8 @@
 class Puzzle {
-  constructor() {
-
+  constructor(dataFilePath) {
+    this.dataFilePath = dataFilePath;
   }
   getPuzzle() {
-    
+
   }
 }
