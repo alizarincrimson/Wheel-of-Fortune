@@ -2,7 +2,7 @@ import Player from "./Player";
 import Round from "./Round";
 
 class Game {
-  constructor(currentPuzzle) {
+  constructor() {
     this.players = [];
     this.round = 0;
   }
@@ -17,8 +17,8 @@ class Game {
 
   createRound() {
     // NOTE: this method should be ran when the game is first insatiated.
-    // instatiate new round, with Current puzzle.
-    let round = new Round(players);
+    // instatiate new round, with the players, puzzle, and wheel.
+    let round = new Round(this.players);
     // incriment this.round to add 1.
     this.round++
   }

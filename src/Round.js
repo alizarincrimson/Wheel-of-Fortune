@@ -49,4 +49,4 @@ class Round {
   }
 }
 
-export default round;
+export default Round;

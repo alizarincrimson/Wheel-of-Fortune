@@ -1,4 +1,4 @@
-import data from Data;
+// import data from Data;
 
 class PuzzleSet {
   constructor() {
@@ -14,9 +14,9 @@ class PuzzleSet {
     // 
 
     // does this make sense to have it's own class or could Puzzle do it?
-    //  
+    // stuff 
   }
 
 }
 
-export default PuzzleSet;
+// export default PuzzleSet;
