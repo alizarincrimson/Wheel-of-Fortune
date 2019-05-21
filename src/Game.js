@@ -1,9 +1,11 @@
 import Player from "./Player";
+import Round from "./Round";
 
 class Game {
-  constructor() {
+  constructor(currentPuzzle) {
     this.players = [];
     this.round = 0;
+    this.currentPuzzle = currentPuzzle;
   }
   createPlayers(name1, name2, name3) {
     // take inputs of p1, p2, and p3
@@ -16,13 +18,14 @@ class Game {
 
   createRound() {
     // NOTE: this method should be ran when the game is first insatiated.
-    // instatiate new round.
+    // instatiate new round, with Current puzzle.
+    let round = new Round('CURRENT PUZZLE GOES HERE')
     // incriment this.round to add 1.
-    this.round++ 
+    this.round++
   }
 
   determineWinner() {
-    // Once and if this.round is greater than 4, 
+    // Once and if this.round is greater than 4,
     // determine the winner by the highest score
   }
 }
