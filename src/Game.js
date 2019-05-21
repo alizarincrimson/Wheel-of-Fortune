@@ -1,9 +1,11 @@
+import Player from "./Player";
+
 class Game {
   constructor() {
     this.players = [];
     this.round = 0;
   }
-  createPlayer(name1, name2, name3) {
+  createPlayers(name1, name2, name3) {
     // take inputs of p1, p2, and p3
     // pushing inputs into players array
     let p1 = new Player(name1, 1);
@@ -13,10 +15,16 @@ class Game {
   }
 
   createRound() {
-    //
+    // NOTE: this method should be ran when the game is first insatiated.
+    // instatiate new round.
+    // incriment this.round to add 1.
+    this.round++ 
   }
 
   determineWinner() {
-
+    // Once and if this.round is greater than 4, 
+    // determine the winner by the highest score
   }
 }
+
+export default Game;

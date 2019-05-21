@@ -24,7 +24,7 @@ class Round {
     // then assign currentPlayer to index 0
     // case: assign currentPlayer to players[i] + 1
   }
-
+  
   updateRoundScore(spinValue) {
   // check current player
   // if this.players[this.currentPlayer]
@@ -44,7 +44,9 @@ class Round {
     // tell Game to make a new Round, do we want a new wheel?
   }
 
-
+  roundEnd() {
+    
+  }
 }
 
-export default Round;
+export default round;
