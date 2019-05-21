@@ -4,11 +4,11 @@ import Turn from './Turn';
 
 class Round {
   constructor(puzzle, players, wheel) {
-    this.puzzle = new Puzzle();
+    this.puzzle = new Puzzle(puzzle);
     this.players = players;
     this.turn = new Turn(this.startTurn());
     this.currentPlayer = null;
-    this.wheel = Wheel;
+    this.wheel = wheel;
     this.p1Score = 0;
     this.p2Score = 0;
     this.p3Score = 0;
