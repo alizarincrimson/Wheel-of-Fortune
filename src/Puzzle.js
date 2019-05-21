@@ -1,11 +1,10 @@
 import domUpdates from './domUpdates';
-import PuzzleSet from './PuzzleSet';
 
 class Puzzle {
-  constructor() {
-    this.puzzle = this.PuzzleSet.pop();
+  constructor(singlePuzzle) {
+    this.singlePuzzle = singlePuzzle;
     this.category = null || puzzle.category;
-    this.numLetters = puzzle.total_number_of_letters
+    this.numLetters = puzzle.total_number_of_letters;
     this.numWords = null || puzzle.number_of_words;
     this.correctAnswer = null || puzzle.correct_answer.toUpperCase();
     this.splitAnswer = this.correctAnswer.toUpperCase().split('');

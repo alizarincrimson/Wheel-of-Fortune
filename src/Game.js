@@ -4,6 +4,7 @@ class Game {
   constructor() {
     this.players = [];
     this.round = 0;
+    this.puzzleSet = [];
   }
   createPlayers(name1, name2, name3) {
     // take inputs of p1, p2, and p3
@@ -14,11 +15,18 @@ class Game {
     this.players.push(p1, p2, p3);
   }
 
+  getPuzzleSet() {
+    // get into data filter, obj puzzles, each obj of puzzles, key of puzzle_bank
+    // randomly grab 5
+    // push 5 into this.puzzleSet
+
+    // data drill maybe data.puzzles[numAnswers].filter
+  }
+  
   createRound() {
-    // NOTE: this method should be ran when the game is first insatiated.
-    // instatiate new round.
-    // incriment this.round to add 1.
-    this.round++ 
+    let wheel = new Wheel();
+    let newRound = new Round(this.puzzleSet.pop(), this.players, wheel);
+    this.round++;
   }
 
   determineWinner() {
