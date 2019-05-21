@@ -5,7 +5,6 @@ class Game {
   constructor(currentPuzzle) {
     this.players = [];
     this.round = 0;
-    this.currentPuzzle = currentPuzzle;
   }
   createPlayers(name1, name2, name3) {
     // take inputs of p1, p2, and p3
@@ -19,14 +18,20 @@ class Game {
   createRound() {
     // NOTE: this method should be ran when the game is first insatiated.
     // instatiate new round, with Current puzzle.
-    let round = new Round('CURRENT PUZZLE GOES HERE')
+    let round = new Round(players);
     // incriment this.round to add 1.
     this.round++
   }
 
   determineWinner() {
     // Once and if this.round is greater than 4,
-    // determine the winner by the highest score
+    // determine the winner by the highest score.
+    // should return winner.
+  }
+
+  createBonusRound(winner) {
+    // this will be triggered by the determineWinner method.
+    // It should instatiate a bonus round of some sort.
   }
 }
 
