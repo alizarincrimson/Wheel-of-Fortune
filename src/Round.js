@@ -9,6 +9,8 @@ class Round {
   }
 
   roundEnd() {
-
+    
   }
 }
+
+export default round;
