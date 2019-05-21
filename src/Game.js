@@ -1,4 +1,5 @@
 import Player from "./Player";
+import Round from "./Round";
 
 class Game {
   constructor() {
@@ -30,8 +31,14 @@ class Game {
   }
 
   determineWinner() {
-    // Once and if this.round is greater than 4, 
-    // determine the winner by the highest score
+    // Once and if this.round is greater than 4,
+    // determine the winner by the highest score.
+    // should return winner.
+  }
+
+  createBonusRound(winner) {
+    // this will be triggered by the determineWinner method.
+    // It should instatiate a bonus round of some sort.
   }
 }
 
