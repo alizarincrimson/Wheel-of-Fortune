@@ -24,8 +24,17 @@ describe("Wheel", function() {
     expect(wheel.wheelValues.length).to.equal(22);
   });
 
-  // it('should shuffle the order of the wheel values', function() {
-    
-  // });
+  it('should shuffle the order of the wheel values', function() {
+    wheel.getWheelValues();
+    const shuffle1 = wheel.wheelValues;
+    wheel.getWheelValues();
+    const shuffle2 = wheel.wheelValues;
+    expect(shuffle1 !== shuffle2);
+  });
+
+  it('should return a random value of the wheel', function() {
+    wheel.getWheelValues();
+    expect(wheel.spinWheel()).to.equal();
+  });
 
 });

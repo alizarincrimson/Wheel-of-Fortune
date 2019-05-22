@@ -5,14 +5,14 @@ class Wheel {
   }
   getWheelValues() {
     const data = this.shuffleWheel(this.dataFilePath.wheel);
-    console.log(data);
     this.wheelValues = data;
   }
   shuffleWheel(values) {
     return values.sort((a, b) => 0.5 - Math.random());
   }
   spinWheel() {
-
+    const value = this.wheelValues[Math.floor(Math.random() * this.wheelValues.length)];
+    return value;
   }
 }
 
