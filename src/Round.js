@@ -1,5 +1,4 @@
 import Puzzle from './Puzzle';
-import Wheel from './Wheel';
 import Turn from './Turn';
 
 class Round {
