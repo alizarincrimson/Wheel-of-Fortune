@@ -1,5 +1,11 @@
 /* This is an example of using Sass, otherwise plain CSS works too*/
-$primary-background: pink;
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+* {
+  font-family: 'Press Start 2P', cursive;
+}
+
+$primary-background: #B3A125;
 
 body {
   background-color: $primary-background;
