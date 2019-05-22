@@ -2,6 +2,7 @@ import chai from "chai";
 const expect = chai.expect;
 
 import Game from "../src/Game";
+import data from '../src/data';
 
 describe('Game', function() {
 
@@ -24,7 +25,14 @@ describe('Game', function() {
     expect(game.players.length).to.equal(3);
   });
 
-  it('creates a new round in method', function() {
+  it('should create an array of 5 random puzzles', function() {
+    game.getRandomPuzzles(data);
+    console.log(game.puzzleSet);
+    expect(game.puzzleSet.length).to.equal(5);
+  })
+
+  // it('should create a new round', function() {
+  //   expect()
     
-  });
+  // });
 });

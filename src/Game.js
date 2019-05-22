@@ -17,27 +17,20 @@ class Game {
     this.players.push(p1, p2, p3);
   }
 
-  getPuzzles() {
+  getRandomPuzzles(data) {
     let allPuzzles = [];
     Object.keys(data.puzzles).forEach(type => {
       data.puzzles[type].puzzle_bank.forEach(puzzle => {
         allPuzzles.push(puzzle);
       });
     });
-    shufflePuzzles(allPuzzles);
-  }
-
-  shufflePuzzles(puzzles) {
-    puzzles.sort() => .5 - Math.random();
-    this.puzzleSet = puzzles.slice(0, 4);
-  }
-  
-  getWheel() {
-    
+    allPuzzles.sort(() => 0.5 - Math.random());
+    return this.puzzleSet = allPuzzles.slice(0, 5);
   }
 
   createRound() {
     let wheel = new Wheel();
+    wheel.getWheelValues();
     let puzzle = new Puzzle(this.puzzleSet.pop());
     let newRound = new Round(puzzle, this.players, wheel);
     this.round++;
