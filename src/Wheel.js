@@ -10,7 +10,7 @@ class Wheel {
   shuffleWheel(values) {
     return values.sort((a, b) => 0.5 - Math.random());
   }
-  spinWheel() {
+  getRandomValue() {
     const value = this.wheelValues[Math.floor(Math.random() * this.wheelValues.length)];
     return value;
   }

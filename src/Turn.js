@@ -2,8 +2,8 @@ class Turn {
   constructor() {
 
   }
-  buyVowel() {
-
+  buyVowel(vowel) {
+    // when you buy a vowel
   }
 
   spinWheel() {
@@ -12,5 +12,9 @@ class Turn {
 
   solvePuzzle() {
     
+  }
+
+  evaluateGuess(guess) {
+
   }
 }
