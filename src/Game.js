@@ -1,6 +1,7 @@
 import Player from "./Player";
 import Round from "./Round";
 import data from "./data";
+import Puzzle from "./Puzzle";
 
 class Game {
   constructor() {
@@ -8,6 +9,7 @@ class Game {
     this.round = 0;
     this.puzzleSet = [];
   }
+
   createPlayers(name1, name2, name3) {
     let p1 = new Player(name1, 1);
     let p2 = new Player(name2, 2);
@@ -32,7 +34,8 @@ class Game {
   
   createRound() {
     let wheel = new Wheel();
-    let newRound = new Round(this.puzzleSet.pop(), this.players, wheel);
+    let puzzle = new Puzzle(this.puzzleSet.pop());
+    let newRound = new Round(puzzle, this.players, wheel);
     this.round++;
   }
 
