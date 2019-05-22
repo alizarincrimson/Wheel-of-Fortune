@@ -30,6 +30,7 @@ class Game {
 
   createRound() {
     let wheel = new Wheel();
+    wheel.getWheelValues();
     let puzzle = new Puzzle(this.puzzleSet.pop());
     let newRound = new Round(puzzle, this.players, wheel);
     this.round++;
