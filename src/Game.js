@@ -1,7 +1,13 @@
-import Player from "./Player";
-import Round from "./Round";
-import data from "./data";
-import Puzzle from "./Puzzle";
+// import Player from "./Player";
+// import Round from "./Round";
+// import Puzzle from "./Puzzle";
+
+let data;
+fetch('https://fe-apps.herokuapp.com/api/v1/gametime/1903/wheel-of-fortune/data')
+  .then(data => data.json())
+  .then(data => console.log(data))
+  .catch(err => console.log('error: try again'));
+
 
 class Game {
   constructor() {
@@ -17,29 +23,24 @@ class Game {
     this.players.push(p1, p2, p3);
   }
 
-  getPuzzles() {
+  getRandomPuzzles(data) {
     let allPuzzles = [];
     Object.keys(data.puzzles).forEach(type => {
       data.puzzles[type].puzzle_bank.forEach(puzzle => {
         allPuzzles.push(puzzle);
       });
     });
-    shufflePuzzles(allPuzzles);
-  }
-
-  shufflePuzzles(puzzles) {
-    puzzles.sort((a, b) => 0.5 - Math.random());
-    this.puzzleSet = puzzles.slice(0, 4);
-  }
-  
-  getWheel() {
-    
+    allPuzzles.sort(() => 0.5 - Math.random());
+    return this.puzzleSet = allPuzzles.slice(0, 5);
   }
 
   createRound() {
-    let wheel = new Wheel();
+    let wheel = new Wheel(data);
+    wheel.getWheelValues();
     let puzzle = new Puzzle(this.puzzleSet.pop());
     let newRound = new Round(puzzle, this.players, wheel);
+    console.log('puzzleSet:', this.puzzleSet);
+    console.log('wheel:', wheel)
     this.round++;
   }
 
