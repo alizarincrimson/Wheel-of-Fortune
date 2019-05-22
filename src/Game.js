@@ -1,5 +1,7 @@
 import Player from "./Player";
 import Round from "./Round";
+import data from "./data";
+import Puzzle from "./Puzzle";
 
 class Game {
   constructor() {
@@ -7,26 +9,37 @@ class Game {
     this.round = 0;
     this.puzzleSet = [];
   }
+
   createPlayers(name1, name2, name3) {
-    // take inputs of p1, p2, and p3
-    // pushing inputs into players array
     let p1 = new Player(name1, 1);
     let p2 = new Player(name2, 2);
     let p3 = new Player(name3, 3);
     this.players.push(p1, p2, p3);
   }
 
-  getPuzzleSet() {
-    // get into data filter, obj puzzles, each obj of puzzles, key of puzzle_bank
-    // randomly grab 5
-    // push 5 into this.puzzleSet
+  getPuzzles() {
+    let allPuzzles = [];
+    Object.keys(data.puzzles).forEach(type => {
+      data.puzzles[type].puzzle_bank.forEach(puzzle => {
+        allPuzzles.push(puzzle);
+      });
+    });
+    shufflePuzzles(allPuzzles);
+  }
 
-    // data drill maybe data.puzzles[numAnswers].filter
+  shufflePuzzles(puzzles) {
+    puzzles.sort() => .5 - Math.random();
+    this.puzzleSet = puzzles.slice(0, 4);
   }
   
+  getWheel() {
+    
+  }
+
   createRound() {
     let wheel = new Wheel();
-    let newRound = new Round(this.puzzleSet.pop(), this.players, wheel);
+    let puzzle = new Puzzle(this.puzzleSet.pop());
+    let newRound = new Round(puzzle, this.players, wheel);
     this.round++;
   }
 

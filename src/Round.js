@@ -1,13 +1,12 @@
 import Puzzle from './Puzzle';
-import Wheel from './Wheel';
 import Turn from './Turn';
 
 class Round {
   constructor(puzzle, players, wheel) {
-    this.puzzle = new Puzzle(puzzle);
     this.vowels = ['A','E','I','O','U'];
+    this.puzzle = puzzle;
     this.players = players;
-    this.turn = new Turn(this.startTurn());
+    this.turn = null;
     this.currentPlayer = null;
     this.wheel = wheel;
     this.p1Score = 0;
@@ -16,6 +15,7 @@ class Round {
   }
 
   startTurn(currentPlayer) {
+    // let newTurn = new Turn
     // passes the new turn a player
     // fires on start of new round and when a player's turn ends
 
