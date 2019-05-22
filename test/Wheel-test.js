@@ -34,7 +34,7 @@ describe("Wheel", function() {
 
   it('should return a random value of the wheel', function() {
     wheel.getWheelValues();
-    expect(wheel.spinWheel()).to.equal();
+    expect(wheel.wheelValues).to.include(wheel.getRandomValue());
   });
 
 });

@@ -3,6 +3,7 @@ import Turn from './Turn';
 
 class Round {
   constructor(puzzle, players, wheel) {
+    this.vowels = ['A','E','I','O','U'];
     this.puzzle = puzzle;
     this.players = players;
     this.turn = new Turn(this.players);
