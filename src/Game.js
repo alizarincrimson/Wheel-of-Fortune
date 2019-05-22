@@ -28,7 +28,7 @@ class Game {
   }
 
   shufflePuzzles(puzzles) {
-    puzzles.sort() => .5 - Math.random();
+    puzzles.sort((a, b) => 0.5 - Math.random());
     this.puzzleSet = puzzles.slice(0, 4);
   }
   
