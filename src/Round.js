@@ -3,7 +3,7 @@ import Turn from './Turn';
 
 class Round {
   constructor(puzzle, players, wheel) {
-    this.puzzle = puzzle);
+    this.puzzle = puzzle;
     this.players = players;
     this.turn = null;
     this.currentPlayer = null;

@@ -32,6 +32,10 @@ class Game {
     this.puzzleSet = puzzles.slice(0, 4);
   }
   
+  getWheel() {
+    
+  }
+
   createRound() {
     let wheel = new Wheel();
     let puzzle = new Puzzle(this.puzzleSet.pop());
