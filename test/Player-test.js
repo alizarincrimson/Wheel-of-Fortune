@@ -24,7 +24,6 @@ describe('Player', function() {
 
   it('should start with an initial score of 0', function() {
     expect(player.totalScore).to.equal(0);
-    expect(player.roundScore).to.equal(0);
   });
 
 });
