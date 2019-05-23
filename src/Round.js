@@ -16,7 +16,6 @@ class Round {
     // case: if current player is players index 2 (the last player)
     // then assign currentPlayer to index 0
     // case: assign currentPlayer to players[i] + 1
-  }
   
   updateRoundScore(spinValue) {
   // if (value of turn) exists
@@ -24,11 +23,12 @@ class Round {
   }
 
   roundWinner(player) {
+    
   }
 
   roundEnd() {
     let newRound = game.createRound();
   }
-}
+};
 
 export default Round;
