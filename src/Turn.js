@@ -20,18 +20,15 @@ class Turn {
     if (this.currentPlayer.score >= 100) {
       this.currentPlayer.score = this.currentPlayer.score - 100
       evaluateGuess()
-       `You have insufficient funds to buy a vowel.`;
-    let guess = this.current
+    } else {
+      return `You have insufficient funds to buy a vowel.`
+    }
     // the vowel is going to passed though this method as an argument when it is clicked on.
     // then the vowel will be passed through as an argument for the evaluateGuess method.
   }
 
 
   spinWheel() {
-    let result = wheel.getRandomValue()
-    if (typeof result === number) {
-      
-    } else if (result === "")
     // this will invoke the wheels method of getRandomValue.
     // it will then wait for user to emter in a letter as a guess
     // that guess should be uppercased
