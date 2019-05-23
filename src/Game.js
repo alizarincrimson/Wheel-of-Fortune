@@ -12,8 +12,9 @@ fetch('https://fe-apps.herokuapp.com/api/v1/gametime/1903/wheel-of-fortune/data'
 class Game {
   constructor() {
     this.players = [];
-    this.round = 0;
+    this.numberOfRounds = 0;
     this.puzzleSet = [];
+    this.round;
   }
 
   createPlayers(name1, name2, name3) {
@@ -37,11 +38,13 @@ class Game {
   createRound() {
     let wheel = new Wheel(data);
     wheel.getWheelValues();
+    this.getRandomPuzzles();
     let puzzle = new Puzzle(this.puzzleSet.pop());
     let newRound = new Round(puzzle, this.players, wheel);
+    this.round = newRound;
     console.log('puzzleSet:', this.puzzleSet);
     console.log('wheel:', wheel)
-    this.round++;
+    this.numberOfRounds++;
   }
 
   determineWinner() {
