@@ -3,10 +3,10 @@ import domUpdates from './domUpdates';
 class Puzzle {
   constructor(singlePuzzle) {
     this.singlePuzzle = singlePuzzle;
-    this.category = null || puzzle.category;
-    this.numLetters = puzzle.total_number_of_letters;
-    this.numWords = null || puzzle.number_of_words;
-    this.correctAnswer = null || puzzle.correct_answer.toUpperCase();
+    this.category = null || this.category;
+    this.numLetters = this.total_number_of_letters;
+    this.numWords = null || this.number_of_words;
+    this.correctAnswer = null || this.correct_answer.toUpperCase();
     this.splitAnswer = this.correctAnswer.toUpperCase().split('');
   }
 
