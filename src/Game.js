@@ -40,7 +40,7 @@ class Game {
     wheel.getWheelValues();
     this.getRandomPuzzles();
     let puzzle = new Puzzle(this.puzzleSet.pop());
-    let newRound = new Round(puzzle, this.players, wheel);
+    let newRound = new Round(this, puzzle, this.players, wheel);
     this.round = newRound;
     console.log('puzzleSet:', this.puzzleSet);
     console.log('wheel:', wheel)
