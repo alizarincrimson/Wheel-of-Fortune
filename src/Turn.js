@@ -1,5 +1,7 @@
 class Turn {
-  constructor(players, wheel, puzzle) {
+  constructor(round, players, wheel, puzzle) {
+    this.round = round;
+    // this.game = game;
     this.players = players;
     this.wheel = wheel;
     this.puzzle = puzzle
@@ -14,10 +16,17 @@ class Turn {
     }
   }
 
-  buyVowel(vowel) {
+  buyVowel(player, vowel) {
+    if (this.currentPlayer.score >= 100) {
+      this.currentPlayer.score = this.currentPlayer.score - 100
+      evaluateGuess()
+    } else {
+      return `You have insufficient funds to buy a vowel.`
+    }
     // the vowel is going to passed though this method as an argument when it is clicked on.
-    // then the vowel will be passed through as an argument for the evaluateGuess method. 
+    // then the vowel will be passed through as an argument for the evaluateGuess method.
   }
+
 
   spinWheel() {
     // this will invoke the wheels method of getRandomValue.

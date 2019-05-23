@@ -38,7 +38,7 @@ class Game {
     let wheel = new Wheel(data);
     wheel.getWheelValues();
     let puzzle = new Puzzle(this.puzzleSet.pop());
-    let newRound = new Round(puzzle, this.players, wheel);
+    let newRound = new Round(this, puzzle, this.players, wheel);
     console.log('puzzleSet:', this.puzzleSet);
     console.log('wheel:', wheel)
     this.round++;
