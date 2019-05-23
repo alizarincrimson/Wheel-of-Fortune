@@ -15,5 +15,14 @@ import domUpdates from './domUpdates';
 console.log('This is the JavaScript entry file - your code begins here.');
 
 $(document).ready(() => {
+});
+
+$('#start-game').on('click', (e) => {
+  e.preventDefault();
+  const name1 = $('#input-name-1').val();
+  const name2 = $('#input-name-2').val();
+  const name3 = $('#input-name-3').val();
   const game = new Game();
+  game.createPlayers(name1, name2, name3);
+  game.createRound();
 });
