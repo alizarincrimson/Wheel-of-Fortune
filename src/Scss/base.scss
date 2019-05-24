@@ -60,3 +60,19 @@ input {
 .player-av {
   width: 6%;
 }
+
+.wheel-section {
+  height: 100px;
+  width: 100px;
+  float: right;
+  margin-right: 100px;
+  margin-top: 60px;
+}
+
+.pokeWheel {
+  width: 80%;
+  .wheel-section:hover & {
+    transform: scale(3) rotate(3600deg);
+    transition: transform 2s ease-out;
+  }
+}
