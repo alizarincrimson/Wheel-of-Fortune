@@ -12,6 +12,10 @@ body {
   background-color: $primary-background;
 }
 
+img {
+  margin: auto;
+}
+
 form {
   background-color: hsla(47, 5%, 55%, 1);
   border: 1px black solid;
@@ -37,7 +41,50 @@ form {
 }
 
 label, input, button {
-   margin: 5px;
+  margin: 5px;
   width: 90%;
   display: block;
+}
+
+main {
+  display: grid;
+  grid-template-areas:
+  "consonant puzzle puzzle"
+  "wheel puzzle puzzle"
+  "player player player"; 
+}
+
+#puzzle-section {
+  height: 500px;
+  grid-area: puzzle;
+}
+
+#consonant-section {
+  height: 200px;
+  grid-area: consonant;
+}
+
+#wheel-section {
+  height: 300px;
+  grid-area: wheel;
+}
+
+#player-section {
+  height: 200px;
+  grid-area: player;
+  display: flex;
+}
+
+#player-1-card,
+#player-2-card,
+#player-3-card {
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.score-label {
+  width: 100%;
 }
