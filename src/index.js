@@ -1,5 +1,10 @@
 // This is the JavaScript entry file - your code begins here
 // Do not delete or rename this file ********
+let data;
+fetch('https://fe-apps.herokuapp.com/api/v1/gametime/1903/wheel-of-fortune/data')
+  .then(dataFile => dataFile.json())
+  .then(dataFile => data = dataFile.data)
+  // .catch(err => console.log('error: try again'));
 
 // An example of how you import jQuery into a JS file if you use jQuery in that file
 import $ from 'jquery';
@@ -12,7 +17,7 @@ import './Scss/base.scss';
 import Game from './Game';
 import domUpdates from './domUpdates';
 
-console.log('This is the JavaScript entry file - your code begins here.');
+// console.log('This is the JavaScript entry file - your code begins here.');
 
 $(document).ready(() => {
 });
@@ -22,7 +27,7 @@ $('#start-game').on('click', (e) => {
   const name1 = $('#input-name-1').val();
   const name2 = $('#input-name-2').val();
   const name3 = $('#input-name-3').val();
-  const game = new Game();
+  const game = new Game(data);
   game.createPlayers(name1, name2, name3);
   game.createRound();
 });

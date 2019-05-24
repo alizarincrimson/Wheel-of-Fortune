@@ -2,12 +2,13 @@ import domUpdates from './domUpdates';
 
 class Puzzle {
   constructor(singlePuzzle) {
+    console.log(singlePuzzle)
     this.singlePuzzle = singlePuzzle;
-    this.category = null || puzzle.category;
-    this.numLetters = puzzle.total_number_of_letters;
-    this.numWords = null || puzzle.number_of_words;
-    this.correctAnswer = null || puzzle.correct_answer.toUpperCase();
-    this.splitAnswer = this.correctAnswer.toUpperCase().split('');
+    this.category = null || singlePuzzle.category;
+    this.numLetters = singlePuzzle.total_number_of_letters;
+    this.numWords = null || singlePuzzle.number_of_words;
+    this.correctAnswer = null || singlePuzzle.correct_answer.toUpperCase();
+    this.splitAnswer = singlePuzzle.correct_answer.toUpperCase().split('');
   }
 
   setupRound() {

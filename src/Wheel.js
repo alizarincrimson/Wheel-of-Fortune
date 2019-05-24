@@ -4,6 +4,7 @@ class Wheel {
     this.wheelValues;
   }
   getWheelValues() {
+    console.log(this.dataFilePath);
     const data = this.shuffleWheel(this.dataFilePath.wheel);
     this.wheelValues = data;
   }
