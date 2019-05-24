@@ -21,8 +21,8 @@ class Game {
 
   getRandomPuzzles(data) {
     let allPuzzles = [];
-    Object.keys(data.puzzles).forEach(type => {
-      data.puzzles[type].puzzle_bank.forEach(puzzle => {
+    Object.keys(this.data.puzzles).forEach(type => {
+      this.data.puzzles[type].puzzle_bank.forEach(puzzle => {
         allPuzzles.push(puzzle);
       });
     });

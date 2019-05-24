@@ -1,8 +1,8 @@
 @import 'variables';
 @import 'normalize';
 
-
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
 
 * {
   font-family: $mainFont;
@@ -12,8 +12,13 @@ body {
   background-color: $primary-background;
 }
 
-#title-card {
-  margin: auto;
+h1 {
+  color: #fecc02;
+  font-size: 4rem;
+  font-weight: bolder;
+  letter-spacing: -5px;
+  text-align: center;
+  -webkit-text-stroke: 4px #376ABB;
 }
 
 form {
@@ -47,51 +52,6 @@ label, input, button {
   display: block;
 }
 
-main {
-  display: grid;
-  grid-template-areas:
-  "consonant puzzle puzzle"
-  "wheel puzzle puzzle"
-  "player player player"; 
-}
-
-#puzzle-section {
-  height: 500px;
-  grid-area: puzzle;
-}
-
-#consonant-section {
-  height: 200px;
-  grid-area: consonant;
-}
-
-#wheel-section {
-  height: 300px;
-  grid-area: wheel;
-}
-
-#player-section {
-  height: 200px;
-  grid-area: player;
-  display: flex;
-}
-
-#player-1-card,
-#player-2-card,
-#player-3-card {
-  border: 1px black solid;
-  padding: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  width: 100%;
-}
-
-.player-sprite {
-  height: 75px;
-  width: 75px;
-}
-
-.score-label {
-  width: 100%;
+.player-av {
+  width: 175px;
 }

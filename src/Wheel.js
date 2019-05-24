@@ -1,12 +1,12 @@
 class Wheel {
-  constructor(dataFilePath) {
-    this.dataFilePath = dataFilePath;
+  constructor(data) {
+    this.data = data;
     this.wheelValues;
   }
   getWheelValues() {
-    console.log(this.dataFilePath);
-    const data = this.shuffleWheel(this.dataFilePath.wheel);
-    this.wheelValues = data;
+    const wheelData = this.shuffleWheel(this.data.wheel);
+    console.log('hey', wheelData)
+    this.wheelValues = wheelData;
   }
   shuffleWheel(values) {
     return values.sort((a, b) => 0.5 - Math.random());
