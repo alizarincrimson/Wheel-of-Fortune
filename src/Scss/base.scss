@@ -12,14 +12,15 @@ body {
   background-color: $primary-background;
 }
 
-img {
+#title-card {
   margin: auto;
 }
 
 form {
   background-color: hsla(47, 5%, 55%, 1);
   border: 1px black solid;
-  width: 200px;
+  height: 250px;
+  width: 250px;
   flex-wrap: wrap;
   justify-content: center;
   left: 0;
@@ -78,11 +79,17 @@ main {
 #player-1-card,
 #player-2-card,
 #player-3-card {
+  border: 1px black solid;
   padding: 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
+}
+
+.player-sprite {
+  height: 75px;
+  width: 75px;
 }
 
 .score-label {
