@@ -46,9 +46,9 @@ $(document).ready(() => {
     console.log('score p1:',  `${game.players[0].totalScore}`)
     console.log('score p2:',  `${game.players[1].totalScore}`)
     console.log('score p3:',  `${game.players[2].totalScore}`)
-    $('.player-score-1').html(`${game.players[0].totalScore}`);
-    $('.player-score-2').html(`${game.players[1].totalScore}`);
-    $('.player-score-3').html(`${game.players[2].totalScore}`);
+    $('#player-1-score').text(`${game.players[0].totalScore}`);
+    $('#player-2-score').text(`${game.players[1].totalScore}`);
+    $('#player-3-score').text(`${game.players[2].totalScore}`);
     // $('.player-name-2').text(name2);
     // $('.player-name-3').text(name3);
   });
