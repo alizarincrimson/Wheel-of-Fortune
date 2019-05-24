@@ -30,6 +30,33 @@ label, input, button {
   margin: 5px 5px;
 }
 
+label {
+  height: 40px;
+  width: 40%;
+  font-size: 25px;
+  margin: auto;
+  text-align: center;
+}
+
+input {
+  height: 40px;
+  width: 40%;
+  font-size: 25px;
+  border: 4px solid black;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+#start-game {
+  height: 42px;
+  width: 25%;
+  font-size: 15px;
+  border: 4px solid black;
+  margin: auto;
+  background-color: darkgray;
+  color: white;
+}
+
 .player-av {
-  width: 175px;
+  width: 10%;
 }
