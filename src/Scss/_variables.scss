@@ -1,3 +1,53 @@
+$mainFont: 'Press Start 2P', cursive;
 $primary-background: #dbdbdb;
 $start-background: #c3cfa1;
-$mainFont: 'Press Start 2P', cursive;
+
+
+/* Text Box Styles */
+$box-bkg: #dbdbdb;
+$box-inner: #376ABB;
+$box-outer: black;
+$pxl-border {
+  background: $box-bkg:;
+  box-shadow:
+    /* Inner Background */
+      0   -6px 0  -2px $box-bkg:,
+      0    6px 0  -2px $box-bkg:,
+      0  -12px 0  -4px $box-bkg:,
+      0   12px 0  -4px $box-bkg:,
+      0  -18px 0  -8px $box-bkg:,
+      0   18px 0  -8px $box-bkg:,
+      0  -24px 0 -12px $box-bkg:,
+      0   24px 0 -12px $box-bkg:,
+    /* Inner Border */
+     -4px  0   0   0   $box-inner,
+      4px  0   0   0   $box-inner,
+      0   -2px 0   2px $box-inner,
+      0    2px 0   2px $box-inner,
+      0   -8px 0   0px $box-inner,
+      0    8px 0   0px $box-inner,
+      0  -12px 0  -2px $box-inner,
+      0   12px 0  -2px $box-inner,
+      0  -16px 0  -4px $box-inner,
+      0   16px 0  -4px $box-inner,
+      0  -22px 0  -8px $box-inner,
+      0   22px 0  -8px $box-inner,
+      0  -28px 0 -12px $box-inner,
+      0   28px 0 -12px $box-inner,
+    /* Outer Border */
+     -9px  0   0   0   $box-outer,
+      9px  0   0   0   $box-outer,
+      0    0   0   6px $box-outer,
+      0   -9px 0   3px $box-outer,
+      0    9px 0   3px $box-outer,
+      0  -10px 0   0   $box-outer,
+      0   10px 0   0   $box-outer,
+      0  -18px 0  -4px $box-outer,
+      0   18px 0  -4px $box-outer,
+      0  -19px 0  -2px $box-outer,
+      0   19px 0  -2px $box-outer,
+      0  -26px 0  -6px $box-outer,
+      0   26px 0  -6px $box-outer,
+      0  -35px 0 -12px $box-outer,
+      0   35px 0 -12px $box-outer;
+}
