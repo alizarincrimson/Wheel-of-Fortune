@@ -4,16 +4,26 @@ class Puzzle {
   constructor(singlePuzzle) {
     this.singlePuzzle = singlePuzzle;
     console.log('singlePuzz: ', singlePuzzle)
-    this.category = null || this.singlePuzzle.category;
+    this.category = this.singlePuzzle.category;
     console.log('puzzleCat: ', this.category)
     this.numLetters = this.singlePuzzle.total_number_of_letters;
-    console.log('numLet: ', this.singlePuzzle.total_number_of_letters)
-    this.numWords = null || this.singlePuzzle.number_of_words;
-    console.log('numWord: ', this.singlePuzzle.number_of_words)
+    console.log('numLet: ', this.numLetters)
+    this.numWords = this.singlePuzzle.number_of_words;
+    console.log('numWords: ', this.numWords)
     this.correctAnswer = null || this.singlePuzzle.correct_answer.toUpperCase();
-    console.log('correctAns: ', this.singlePuzzle.correct_answer.toUpperCase())
+    console.log('correctAns: ', this.correctAnswer)
     this.splitAnswer = this.correctAnswer.toUpperCase().split('');
-    console.log('splitAns: ', this.correctAnswer.toUpperCase().split(''))
+    console.log('splitAns: ', this.splitAnswer)
+  }
+
+  formatPuzzle() {
+    let blockLetter = this.splitAnswer.map((letter)=> {
+      return `<div class="puzzle-letter">${letter}</div>`
+    })
+    return blockLetter;
+    //get the splitAnswer, iterate through each element
+    //forEach element, do a template literal, wrap each element w/in a div
+
   }
 
   setupRound() {

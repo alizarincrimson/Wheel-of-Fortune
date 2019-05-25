@@ -69,10 +69,21 @@ input {
   margin-top: 60px;
 }
 
+.puzzle-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .pokeWheel {
   width: 80%;
   .wheel-section:hover & {
     transform: scale(3) rotate(3600deg);
     transition: transform 2s ease-out;
   }
+}
+
+.puzzle-letter {
+  border: 1px solid black;
+  height: 50px;
+  width: 50px;
 }

@@ -23,26 +23,38 @@ fetch('https://fe-apps.herokuapp.com/api/v1/gametime/1903/wheel-of-fortune/data'
   .then(dataFile => data = dataFile.data)
 // .catch(err => console.log('error: try again'));
 
-
 $(document).ready(() => {
-  
+  let game;
   $('#start-game').on('click', (e) => {
     e.preventDefault();
     const name1 = $('#input-name-1').val();
     const name2 = $('#input-name-2').val();
     const name3 = $('#input-name-3').val();
-    const game = new Game(data);
+    game = new Game(data);
     game.createPlayers(name1, name2, name3);
     game.createRound();
-    console.log('hey', game)
+    console.log('hey', game);
     $('.gameboard').removeAttr('hidden')
     $('form').hide()
+    loadPlayerData(name1, name2, name3);
+    loadPuzzleData();
+    // console.log('wordSplit: ',`${game.round.puzzle.splitAnswer}`)
+    // $('.puzzle-section').text(`${game.round.puzzle.splitAnswer}`);
+  });
+
+  function loadPlayerData(name1, name2, name3) {
     $('.player-name-1').text(name1);
     $('.player-name-2').text(name2);
     $('.player-name-3').text(name3);
     $('#player-1-score').text(`${game.players[0].totalScore}`);
     $('#player-2-score').text(`${game.players[1].totalScore}`);
     $('#player-3-score').text(`${game.players[2].totalScore}`);
-  });
+  }
+
+  function loadPuzzleData() {
+    $('.puzzle-section').append(game.round.puzzle.formatPuzzle());
+  }
+  //remove commas from splitAnswer
+  //get letters on the dom to appear in boxes, remove 
 });
 
