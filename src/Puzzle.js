@@ -2,6 +2,7 @@ import domUpdates from './domUpdates';
 
 class Puzzle {
   constructor(singlePuzzle) {
+    console.log(singlePuzzle)
     this.singlePuzzle = singlePuzzle;
     console.log('singlePuzz: ', singlePuzzle)
     this.category = this.singlePuzzle.category;

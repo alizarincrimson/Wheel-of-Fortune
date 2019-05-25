@@ -30,6 +30,7 @@ class Turn {
 
   spinWheel() {
     // this will invoke the wheels method of getRandomValue.
+    wheel.getRandomValue();
     // it will then wait for user to emter in a letter as a guess
     // that guess should be uppercased
     // that guess should be passed through evaluate guess as an argument
