@@ -21,13 +21,10 @@ h1 {
   -webkit-text-stroke: 4px #376ABB;
 }
 
-form {
-  margin: 5px 5px;
-}
-
 label, input, button {
+  margin: 5px;
+  width: 90%;
   display: block;
-  margin: 5px 5px;
 }
 
 label {
@@ -58,21 +55,58 @@ input {
 }
 
 .player-av {
-  width: 6%;
+  width: 25%;
 }
 
 .wheel-section {
   height: 100px;
   width: 100px;
   float: right;
-  margin-right: 100px;
-  margin-top: 60px;
+  margin: 100px;
 }
 
 .pokeWheel {
+  margin: auto;
   width: 80%;
   .wheel-section:hover & {
-    transform: scale(3) rotate(3600deg);
+    transform: scale(2) rotate(3600deg);
     transition: transform 2s ease-out;
   }
+}
+
+main {
+  display: grid;
+  grid-template-areas:
+  "player puzzle puzzle"
+  "player puzzle puzzle"
+  "wheel consanants consonants";
+  padding: 10px;
+}
+
+.player-section {
+  width: 300px;
+  grid-area: player;
+  div {
+    border: 1px black solid;
+    display: flex;
+    flex-wrap: wrap;
+    height: 200px;
+    justify-content: center;
+    padding: 10px;
+  }
+  p {
+    width: 100%;
+  }
+}
+
+.puzzle-section {
+  grid-area: puzzle;
+}
+
+.wheel-section {
+  grid-area: wheel;
+}
+
+.consonant-section {
+  grid-area: consonants;
 }

@@ -38,8 +38,8 @@ class Game {
     let puzzle = new Puzzle(this.puzzleSet.pop());
     let newRound = new Round(this, puzzle, this.players, wheel);
     this.round = newRound;
-    console.log('puzzleSet:', this.puzzleSet);
-    console.log('wheel:', wheel)
+    // console.log('puzzleSet:', this.puzzleSet);
+    // console.log('wheel:', wheel)
     this.numberOfRounds++;
   }
 

@@ -17,7 +17,7 @@ describe('Turn', function() {
     wheel.getWheelValues();
     game = new Game();
     game.createPlayers('Ralph', 'Gary', 'Ted');
-    turn = new Turn(game.players, wheel);
+    turn = new Turn('round' ,game.players, wheel, 'puzzle');
   });
 
   it('should be a function', function() {
