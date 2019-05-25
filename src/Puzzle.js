@@ -3,11 +3,17 @@ import domUpdates from './domUpdates';
 class Puzzle {
   constructor(singlePuzzle) {
     this.singlePuzzle = singlePuzzle;
-    this.category = null || this.category;
-    this.numLetters = this.total_number_of_letters;
-    this.numWords = null || this.number_of_words;
-    this.correctAnswer = null || this.correct_answer.toUpperCase();
+    console.log('singlePuzz: ', singlePuzzle)
+    this.category = null || this.singlePuzzle.category;
+    console.log('puzzleCat: ', this.category)
+    this.numLetters = this.singlePuzzle.total_number_of_letters;
+    console.log('numLet: ', this.singlePuzzle.total_number_of_letters)
+    this.numWords = null || this.singlePuzzle.number_of_words;
+    console.log('numWord: ', this.singlePuzzle.number_of_words)
+    this.correctAnswer = null || this.singlePuzzle.correct_answer.toUpperCase();
+    console.log('correctAns: ', this.singlePuzzle.correct_answer.toUpperCase())
     this.splitAnswer = this.correctAnswer.toUpperCase().split('');
+    console.log('splitAns: ', this.correctAnswer.toUpperCase().split(''))
   }
 
   setupRound() {

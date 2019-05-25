@@ -25,6 +25,7 @@ fetch('https://fe-apps.herokuapp.com/api/v1/gametime/1903/wheel-of-fortune/data'
 
 
 $(document).ready(() => {
+  
   $('#start-game').on('click', (e) => {
     e.preventDefault();
     const name1 = $('#input-name-1').val();
@@ -35,17 +36,13 @@ $(document).ready(() => {
     game.createRound();
     console.log('hey', game)
     $('.gameboard').removeAttr('hidden')
+    $('form').hide()
+    $('.player-name-1').text(name1);
+    $('.player-name-2').text(name2);
+    $('.player-name-3').text(name3);
+    $('#player-1-score').text(`${game.players[0].totalScore}`);
+    $('#player-2-score').text(`${game.players[1].totalScore}`);
+    $('#player-3-score').text(`${game.players[2].totalScore}`);
   });
 });
 
-// $('#start-game').on('click', (e) => {
-//   e.preventDefault();
-//   const name1 = $('#input-name-1').val();
-//   const name2 = $('#input-name-2').val();
-//   const name3 = $('#input-name-3').val();
-//   const game = new Game(data);
-//   game.createPlayers(name1, name2, name3);
-//   game.createRound();
-//   console.log('hey', game)
-//   $('.gameboard').removeAttr('hidden')
-// });
