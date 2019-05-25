@@ -62,8 +62,7 @@ input {
   height: 100px;
   width: 100px;
   float: right;
-  margin-right: 100px;
-  margin-top: 60px;
+  margin: 100px;
 }
 
 .pokeWheel {
@@ -89,7 +88,14 @@ main {
   grid-area: player;
   div {
     border: 1px black solid;
-    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    height: 200px;
+    justify-content: center;
+    padding: 10px;
+  }
+  p {
+    width: 100%;
   }
 }
 
