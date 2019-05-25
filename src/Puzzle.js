@@ -4,11 +4,17 @@ class Puzzle {
   constructor(singlePuzzle) {
     console.log(singlePuzzle)
     this.singlePuzzle = singlePuzzle;
-    this.category = null || singlePuzzle.category;
-    this.numLetters = singlePuzzle.total_number_of_letters;
-    this.numWords = null || singlePuzzle.number_of_words;
-    this.correctAnswer = null || singlePuzzle.correct_answer.toUpperCase();
-    this.splitAnswer = singlePuzzle.correct_answer.toUpperCase().split('');
+    console.log('singlePuzz: ', singlePuzzle)
+    this.category = null || this.singlePuzzle.category;
+    console.log('puzzleCat: ', this.category)
+    this.numLetters = this.singlePuzzle.total_number_of_letters;
+    console.log('numLet: ', this.singlePuzzle.total_number_of_letters)
+    this.numWords = null || this.singlePuzzle.number_of_words;
+    console.log('numWord: ', this.singlePuzzle.number_of_words)
+    this.correctAnswer = null || this.singlePuzzle.correct_answer.toUpperCase();
+    console.log('correctAns: ', this.singlePuzzle.correct_answer.toUpperCase())
+    this.splitAnswer = this.correctAnswer.toUpperCase().split('');
+    console.log('splitAns: ', this.correctAnswer.toUpperCase().split(''))
   }
 
   setupRound() {

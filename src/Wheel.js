@@ -5,7 +5,6 @@ class Wheel {
   }
   getWheelValues() {
     const wheelData = this.shuffleWheel(this.data.wheel);
-    console.log('hey', wheelData)
     this.wheelValues = wheelData;
   }
   shuffleWheel(values) {
