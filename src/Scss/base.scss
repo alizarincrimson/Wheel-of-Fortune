@@ -140,6 +140,13 @@ main {
   }
 }
 
+.category-section {
+  grid-area: puzzle;
+  font-size: 2rem;
+  text-align: left;
+  padding: 10px;
+}
+
 .puzzle-section {
   grid-area: puzzle;
 }
@@ -156,6 +163,7 @@ main {
 }
 
 .message-section {
+  grid-area: buttons;
   font-size: 1rem;
   text-align: center;
   padding: 10px;

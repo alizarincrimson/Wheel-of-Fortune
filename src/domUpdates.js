@@ -2,6 +2,10 @@ import $ from 'jquery';
 
 export default {
 
+  displayCategory(category) {
+    $('.category-section').text(category);
+  }
+
   vowelError() {
     $('.vowel-error').css('visibility', 'visible');
   },

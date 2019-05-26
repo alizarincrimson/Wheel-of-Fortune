@@ -26,6 +26,7 @@ class Puzzle {
       }
     })
     return blockLetter;
+    domUpdates.displayCategory(this.singlePuzzle.category);
   }
 
   setupRound() {
