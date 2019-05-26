@@ -6,6 +6,7 @@ class Wheel {
   getWheelValues() {
     const wheelData = this.shuffleWheel(this.data.wheel);
     this.wheelValues = wheelData;
+    console.log("getwheelValues: ", this.wheelValues)
   }
   shuffleWheel(values) {
     return values.sort((a, b) => 0.5 - Math.random());
