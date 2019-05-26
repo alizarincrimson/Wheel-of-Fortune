@@ -17,16 +17,19 @@ class Puzzle {
     console.log('splitAns: ', this.splitAnswer)
   }
 
-  formatPuzzle() {
 
-    let blockLetter = this.splitAnswer.map((letter)=> {
-      return `<div class="puzzle-letter">${letter}</div>`
+  
+  formatPuzzle() {
+    let blockLetter = this.splitAnswer.map((letter) => {
+      if (letter == " ") {
+        return `<div class="space"></div>`
+      } else {
+        return `<div class="puzzle-letter hidden">${letter}</div>`
+      }
     })
     return blockLetter;
-    //get the splitAnswer, iterate through each element
-    //forEach element, do a template literal, wrap each element w/in a div
-
   }
+
 
   setupRound() {
     // show this.puzzle.category on the DOM
@@ -34,9 +37,8 @@ class Puzzle {
     // use this.splitAnswer to populate spots on board based on number of words and length of each word, avoid weird breaks and push entire word gets down to the next line when out of space
   }
 
-  solvePuzzle(guess) {
-    // if the current player's turn input.toUpperCase() === this.correctAnswer
-    // fire method on Turn to pass winner back to Round?
+  solvedPuzzle(guess) {
+    return this.correctAnswer.toUpperCase() === guess.toUpperCase();
   }
 
 }
