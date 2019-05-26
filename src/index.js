@@ -25,6 +25,7 @@ fetch('https://fe-apps.herokuapp.com/api/v1/gametime/1903/wheel-of-fortune/data'
 
 $(document).ready(() => {
   let game;
+  let possiblePoints;
   $('#start-game').on('click', (e) => {
     e.preventDefault();
     const name1 = $('#input-name-1').val();
@@ -35,12 +36,8 @@ $(document).ready(() => {
     game.createRound();
     console.log('hey', game);
     hideForm();
-    // $('.gameboard').removeAttr('hidden')
-    // $('form').hide()
     loadPlayerData(name1, name2, name3);
     loadPuzzleData();
-    // console.log('wordSplit: ',`${game.round.puzzle.splitAnswer}`)
-    // $('.puzzle-section').text(`${game.round.puzzle.splitAnswer}`);
   });
 
   function hideForm() {
@@ -63,9 +60,21 @@ $(document).ready(() => {
 
   $('#spin-wheel').on('click', function(e) {
     e.preventDefault();
-    let possiblePoints = game.wheel.getRandomValue();
+    possiblePoints = game.wheel.getRandomValue();
     $('#wheel-spin').text(possiblePoints);
+    if (game.round.turn.evaluateSpin() === true) {
+      //display input bar and submit button
+    }
   });
-  //remove commas from splitAnswer
-  //get letters on the dom to appear in boxes, remove 
+
+  $('#solve-puzzle').on('click', function(e) {
+    //display a new input bar and submit button (form)
+    e.preventDefault();
+  })
+
+  $().on('click', function(e) {
+    //on click, get val of guess input
+    //invoke solvepuzzle method
+    // pass argument of input value
+  })
 });
