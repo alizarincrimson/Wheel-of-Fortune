@@ -15,12 +15,13 @@ class Puzzle {
     console.log('correctAns: ', this.correctAnswer)
     this.splitAnswer = this.correctAnswer.toUpperCase().split('');
     console.log('splitAns: ', this.splitAnswer)
+    this.invisible = true;
   }
 
   formatPuzzle() {
 
     let blockLetter = this.splitAnswer.map((letter)=> {
-      return `<div class="puzzle-letter">${letter}</div>`
+      return `<div class="puzzle-letter hidden">${letter}</div>`
     })
     
     return blockLetter;
@@ -36,8 +37,7 @@ class Puzzle {
   }
 
   solvePuzzle(guess) {
-    // if the current player's turn input.toUpperCase() === this.correctAnswer
-    // fire method on Turn to pass winner back to Round?
+    return this.correctAnswer.toUpperCase() === guess.toUpperCase();
   }
 
 }
