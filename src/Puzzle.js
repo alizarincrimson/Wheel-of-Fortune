@@ -15,20 +15,21 @@ class Puzzle {
     console.log('correctAns: ', this.correctAnswer)
     this.splitAnswer = this.correctAnswer.toUpperCase().split('');
     console.log('splitAns: ', this.splitAnswer)
-    this.invisible = true;
   }
 
+
+  
   formatPuzzle() {
-
-    let blockLetter = this.splitAnswer.map((letter)=> {
-      return `<div class="puzzle-letter hidden">${letter}</div>`
+    let blockLetter = this.splitAnswer.map((letter) => {
+      if (letter == " ") {
+        return `<div class="space"></div>`
+      } else {
+        return `<div class="puzzle-letter hidden">${letter}</div>`
+      }
     })
-    
     return blockLetter;
-    //get the splitAnswer, iterate through each element
-    //forEach element, do a template literal, wrap each element w/in a div
-
   }
+
 
   setupRound() {
     // show this.puzzle.category on the DOM
