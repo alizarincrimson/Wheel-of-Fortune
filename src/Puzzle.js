@@ -36,7 +36,7 @@ class Puzzle {
     // use this.splitAnswer to populate spots on board based on number of words and length of each word, avoid weird breaks and push entire word gets down to the next line when out of space
   }
 
-  solvePuzzle(guess) {
+  solvedPuzzle(guess) {
     return this.correctAnswer.toUpperCase() === guess.toUpperCase();
   }
 

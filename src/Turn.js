@@ -40,7 +40,7 @@ class Turn {
     // the user will enter in the whole puzzle WITH SPACES
     // it will then need to evaluate the guess of the player
     // if guess stricly equals the joined puzzle(in array form)
-      // return true
+      // return solvedPuzzle();
     //  otherwise 
       // invoke getCurrentPlayer
       // and return false
