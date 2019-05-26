@@ -80,16 +80,19 @@ input {
 }
 
 .puzzle-letter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 1px solid black;
   height: 50px;
   width: 50px;
 }
 main {
   display: grid;
+  grid-gap: 10px;
   grid-template-areas:
   "player puzzle puzzle"
-  "player puzzle puzzle"
-  "wheel consanants consonants";
+  "player consonants wheel";
   padding: 10px;
 }
 
@@ -97,7 +100,8 @@ main {
   width: 300px;
   grid-area: player;
   div {
-    border: 1px black solid;
+    text-align: center;
+    border: 3px black dashed;
     display: flex;
     flex-wrap: wrap;
     height: 200px;
@@ -119,4 +123,8 @@ main {
 
 .consonant-section {
   grid-area: consonants;
+}
+
+h2 {
+  width: 100%;
 }

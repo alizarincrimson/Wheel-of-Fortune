@@ -18,9 +18,11 @@ class Puzzle {
   }
 
   formatPuzzle() {
+
     let blockLetter = this.splitAnswer.map((letter)=> {
       return `<div class="puzzle-letter">${letter}</div>`
     })
+    
     return blockLetter;
     //get the splitAnswer, iterate through each element
     //forEach element, do a template literal, wrap each element w/in a div
