@@ -1,3 +1,5 @@
+import domUpdates from './domUpdates';
+
 class Turn {
   constructor(round, players, wheel, puzzle) {
     this.round = round;
