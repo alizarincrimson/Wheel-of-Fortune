@@ -36,7 +36,7 @@ class Turn {
     // that guess should be passed through evaluate guess as an argument
   }
 
-  solvePuzzle() {
+  solvePuzzle(guess) {
     // the user will enter in the whole puzzle WITH SPACES
     // it will then need to evaluate the guess of the player
     // if guess stricly equals the joined puzzle(in array form)

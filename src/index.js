@@ -34,13 +34,19 @@ $(document).ready(() => {
     game.createPlayers(name1, name2, name3);
     game.createRound();
     console.log('hey', game);
-    $('.gameboard').removeAttr('hidden')
-    $('form').hide()
+    hideForm();
+    // $('.gameboard').removeAttr('hidden')
+    // $('form').hide()
     loadPlayerData(name1, name2, name3);
     loadPuzzleData();
     // console.log('wordSplit: ',`${game.round.puzzle.splitAnswer}`)
     // $('.puzzle-section').text(`${game.round.puzzle.splitAnswer}`);
   });
+
+  function hideForm() {
+    $('.gameboard').removeAttr('hidden')
+    $('.name-inputs').hide()
+  }
 
   function loadPlayerData(name1, name2, name3) {
     $('.player-name-1').text(name1);
@@ -54,6 +60,12 @@ $(document).ready(() => {
   function loadPuzzleData() {
     $('.puzzle-section').append(game.round.puzzle.formatPuzzle());
   }
+
+  $('#spin-wheel').on('click', function(e) {
+    e.preventDefault();
+    let possiblePoints = game.wheel.getRandomValue();
+    $('#wheel-spin').text(possiblePoints);
+  });
   //remove commas from splitAnswer
   //get letters on the dom to appear in boxes, remove 
 });
