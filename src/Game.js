@@ -11,6 +11,7 @@ class Game {
     this.numberOfRounds = 0;
     this.puzzleSet = [];
     this.round;
+    this.wheel;
   }
 
   createPlayers(name1, name2, name3) {
@@ -33,8 +34,9 @@ class Game {
 
   createRound() {
     let wheel = new Wheel(this.data);
-    console.log('game - wheelClass: ', wheel);
-    // wheel.getWheelValues();
+    // console.log('game - wheelClass: ', wheel);
+    wheel.getWheelValues();
+    this.wheel = wheel;
     // let shuffledWheelValues = wheel.wheelValues
     // console.log('game - wheelValues: ', wheel.wheelValues);
     this.getRandomPuzzles(this.data);

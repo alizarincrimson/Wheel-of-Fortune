@@ -21,6 +21,10 @@ h1 {
   -webkit-text-stroke: 4px #376ABB;
 }
 
+h2 {
+  font-size: 1em;
+}
+
 label, input, button {
   margin: 5px;
   width: 90%;
@@ -61,8 +65,14 @@ input {
 .wheel-section {
   height: 100px;
   width: 100px;
-  float: right;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: end;
   margin: 100px;
+  #wheel-spin {
+    text-align: center;
+  }
 }
 
 .puzzle-section {
@@ -70,8 +80,8 @@ input {
   flex-wrap: wrap;
 }
 
-.pokeWheel {
-  margin: auto;
+.poke-wheel {
+  margin: 35px auto;
   width: 80%;
   .wheel-section:hover & {
     transform: scale(2) rotate(3600deg);
@@ -90,9 +100,11 @@ input {
 main {
   display: grid;
   grid-gap: 10px;
+  justify-items: center;
   grid-template-areas:
   "player puzzle puzzle"
-  "player consonants wheel";
+  "player current-player wheel"
+  "letters letters buttons";
   padding: 10px;
 }
 
@@ -104,7 +116,7 @@ main {
     border: 3px black dashed;
     display: flex;
     flex-wrap: wrap;
-    height: 200px;
+    height: 150px;
     justify-content: center;
     padding: 10px;
   }
@@ -121,8 +133,22 @@ main {
   grid-area: wheel;
 }
 
-.consonant-section {
-  grid-area: consonants;
+.letters-section {
+  border: 1px black solid;
+  grid-area: letters;
+  padding: 5px;
+  width: 100%;
+}
+
+.buttons-section {
+  border: 1px black solid;
+  grid-area: buttons;
+  width: 230px;
+  .player-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 h2 {

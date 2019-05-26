@@ -3,6 +3,7 @@ class Player {
     this.name = name;
     this.id = id;
     this.totalScore = 0;
+    this.roundScore = 0;
   }
   
   displayScore() {
