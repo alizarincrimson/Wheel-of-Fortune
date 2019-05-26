@@ -20,8 +20,8 @@ class Turn {
   }
 
   buyVowel(vowel) {
-    // (this.currentPlayer.score >= 100) {
-    //   this.currentPlayer.score -= 100
+    // (this.currentPlayer.roundScore >= 100) {
+    //   this.currentPlayer.roundScore -= 100
     //     evaluateGuess(vowel);
     // } else {
     //     domUpdates.vowelError();
