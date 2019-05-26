@@ -17,8 +17,6 @@ class Puzzle {
     console.log('splitAns: ', this.splitAnswer)
   }
 
-
-  
   formatPuzzle() {
     let blockLetter = this.splitAnswer.map((letter) => {
       if (letter == " ") {
@@ -29,7 +27,6 @@ class Puzzle {
     })
     return blockLetter;
   }
-
 
   setupRound() {
     // show this.puzzle.category on the DOM

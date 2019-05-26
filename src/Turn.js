@@ -11,21 +11,21 @@ class Turn {
   
   getCurrentPlayer() {
     let playerIndex = this.players.indexOf(this.currentPlayer);
-    this.currentPlayer = this.players[playerIndex + 1];
+      this.currentPlayer = this.players[playerIndex + 1];
     if (this.currentPlayer === undefined) {
       this.currentPlayer = this.players[0];
     }
   }
 
-  buyVowel(player, vowel) {
-    if (this.currentPlayer.score >= 100) {
-      this.currentPlayer.score = this.currentPlayer.score - 100
-      evaluateGuess()
-    } else {
-      return `You have insufficient funds to buy a vowel.`
-    }
-    // the vowel is going to passed though this method as an argument when it is clicked on.
-    // then the vowel will be passed through as an argument for the evaluateGuess method.
+  buyVowel(vowel) {
+    // (this.currentPlayer.score >= 100) {
+    //   this.currentPlayer.score -= 100
+    //     evaluateGuess(vowel);
+    // } else {
+    //     domUpdates.vowelError();
+    // }
+
+    // how are we reaching the current players round score?
   }
 
   spinWheel() {
@@ -53,6 +53,7 @@ class Turn {
       // remove class hidden from letter
       // and return true
     // otherwise
+      // domUpdates.wrongLetter();
       // invoke getCurrentPlayer
       // and return false
     // 
