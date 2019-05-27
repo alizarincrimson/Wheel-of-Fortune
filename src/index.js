@@ -58,12 +58,18 @@ $(document).ready(() => {
     $('.puzzle-section').append(game.round.puzzle.formatPuzzle());
   }
 
+  $('#buy-vowel').on('click', function(e) {
+    e.preventDefault();
+  })
+
   $('#spin-wheel').on('click', function(e) {
     e.preventDefault();
     possiblePoints = game.wheel.getRandomValue();
     $('#wheel-spin').text(possiblePoints);
     if (game.round.turn.evaluateSpin() === true) {
+      console.log("it evals guess!")
       //display input bar and submit button
+      $('.guess-letter-inputs').removeAttr('hidden')
     }
   });
 

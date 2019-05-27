@@ -3,11 +3,13 @@ import Game from "./Game";
 class Turn {
   constructor(round, players, wheel, puzzle) {
     this.round = round;
-    // this.game = game;
     this.players = players;
+    console.log("playersProp: ", this.players)
     this.wheel = wheel;
+    console.log("wheelProp: ", this.wheel)
     this.puzzle = puzzle
     this.currentPlayer = players[0];
+    // this.spin
   }
   
   getCurrentPlayer() {
@@ -29,22 +31,24 @@ class Turn {
     // then the vowel will be passed through as an argument for the evaluateGuess method.
   }
 
-  evaluateSpin(possiblePoints) {
-    if (typeof possiblePoints === "number") {
+  evaluateSpin() {
+    console.log("it evals Spin!")
+    console.log("wheelResult pleaasseee: ", this.round.wheel.spinResult)
+    if (typeof this.round.wheel.spinResult === "number") {
       return true
-    } else if (possiblePoints === "BANKRUPT") {
+    } else if (this.round.wheel.spinResult === "BANKRUPT") {
       this.currentPlayer.roundScore = 0;
       return false
     } else {
-      getCurrentPlayer()
+      getCurrentPlayer();
       return false
     }
   }
 
-  evaluateLetterGuess(guess, possiblePoints) {
+  evaluateLetterGuess(guess) {
     let splitPuzzle = puzzle.splitAnswer;
     if (splitPuzzle.includes(guess)) {
-      this.currentPlayer.roundScore += possiblePoints;
+      this.currentPlayer.roundScore += this.round.wheel.spinResult;
       return true
     } else {
       getCurrentPlayer()
@@ -54,6 +58,7 @@ class Turn {
     // it evaluates if the the puzzle includes the guess value
     // if the puzzle does include the guess value
       // splice the value(s) of guess from the puzzle where it's included
+      // remove class hidden from letter
       // and return true
     // otherwise
       // invoke getCurrentPlayer
