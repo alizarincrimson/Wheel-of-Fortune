@@ -8,6 +8,7 @@ class Turn {
     this.wheel = wheel;
     this.puzzle = puzzle
     this.currentPlayer = players[0];
+    // this.spin
   }
   
   getCurrentPlayer() {
@@ -38,7 +39,13 @@ class Turn {
     } else {
       getCurrentPlayer()
       return false
-    }
+  }
+    
+  spinWheel() {
+    wheel.getRandomValue();
+    // it will then wait for user to emter in a letter as a guess
+    // that guess should be uppercased
+    // that guess should be passed through evaluate guess as an argument
   }
 
   evaluateLetterGuess(guess, possiblePoints) {
@@ -54,6 +61,7 @@ class Turn {
     // it evaluates if the the puzzle includes the guess value
     // if the puzzle does include the guess value
       // splice the value(s) of guess from the puzzle where it's included
+      // remove class hidden from letter
       // and return true
     // otherwise
       // invoke getCurrentPlayer
@@ -85,7 +93,7 @@ class Turn {
       // invoke getCurrentPlayer
       // and return false
   }
-
+    
 }
 
 export default Turn;
