@@ -17,9 +17,9 @@
     <button type="submit" id="start-game">Start Playing!</button>
   </form>
   <main class="gameboard" hidden>
-    <section class="category-section">
-    </section>
     <section class="puzzle-section">
+      <section class="category-section">
+      </section>
     </section>
     <section class="wheel-section">
       <img class="poke-wheel" src="https://i.postimg.cc/JnzGWgNw/pokewheel-px.png"
@@ -65,10 +65,13 @@
       <!-- <form class="buy-vowel-inputs" hidden>
         <button id=""></button>
       </form> -->
-      <form class="guess-letter-inputs" hidden>
-        <input type="text" name="guess" id="guess-letter" placeholder="Guess a Letter">
-        <button type="button" name="submit-guess" id="submit-guess">Submit Guess</button>
-      </form>
+    </section>
+    <section class="guess-inputs">
+      <h2>Guess Inputs:</h2>
+        <form class="guess-letter-inputs" hidden>
+          <input type="text" name="guess" id="guess-letter" placeholder="Guess a Letter">
+          <button type="button" name="submit-guess" id="submit-guess">Submit Guess</button>
+        </form>
     </section>
   </main>
   <!-- Do not include the index.js or main.bundle.js file here - it is done automatically by the webpack server -->

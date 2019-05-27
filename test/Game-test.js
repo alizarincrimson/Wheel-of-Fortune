@@ -11,7 +11,7 @@ describe('Game', function() {
 
   let game;
   beforeEach(function() {
-    game = new Game();
+    game = new Game(data);
   });
 
   it('should be a function', function () {
@@ -29,27 +29,27 @@ describe('Game', function() {
   });
 
   it('should create a puzzleSet array of 5 random puzzles', function() {
-    console.log(data.puzzles);
-    expect(game.puzzleSet).to.equal([]);
+    // console.log(game.data.puzzleSet);
+    expect(game.puzzleSet).to.eql([]);
     game.getRandomPuzzles(data);
     expect(game.puzzleSet.length).to.equal(5);
   })
 
-  it.skip('should make a single Puzzle from the puzzleSet', function () {
-    let puzzle = new Puzzle(game.getRandomPuzzles(data).pop);
+  it('should make a single Puzzle from the puzzleSet', function () {
+    let puzzle = new Puzzle(game.getRandomPuzzles(data).pop());
     game.getSinglePuzzle();
     expect(puzzle).to.be.an.instanceOf(Puzzle);
   });
 
-  it.skip('should make a new Wheel for the Game', function() {
+  it('should make a new Wheel for the Game', function() {
     let wheel = new Wheel(data);
     game.getWheel();
     expect(wheel).to.be.an.instanceOf(Wheel);
   })
 
-  it.skip('should make a new Round', function() {
+  it('should make a new Round', function() {
     let wheel = new Wheel(data);
-    let puzzle = new Puzzle(game.getRandomPuzzles(data).pop);
+    let puzzle = new Puzzle(game.getRandomPuzzles(data).pop());
     let round = new Round(game, puzzle, ('Ralph', 'Ted', 'Dude'), wheel);
     game.createRound();
     expect(round).to.be.an.instanceOf(Round);
