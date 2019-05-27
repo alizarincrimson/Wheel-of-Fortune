@@ -24,7 +24,7 @@ class Turn {
   buyVowel(vowel) {
     if (this.currentPlayer.roundScore >= 100) {
       this.currentPlayer.roundScore -= 100;
-      evaluateLetterGuess(vowel);
+      this.evaluateLetterGuess(vowel);
     } else {
       domUpdates.vowelError();
     }
@@ -50,8 +50,8 @@ class Turn {
       this.currentPlayer.roundScore += this.round.wheel.spinResult;
       return true
     } else {
-      getCurrentPlayer()
-      return false
+      domUpdates.wrongLetter();
+      this.getCurrentPlayer();
     }
     // takes in the guess from either spinWheel or buyVowel method
     // it evaluates if the the puzzle includes the guess value
@@ -78,8 +78,8 @@ class Turn {
       this.currentPlayer.roundScore += possiblePoints 
       this.round.endRound()
     } else {
-      this.getCurrentPlayer()
-      return `You've guessed incorrectly.`
+      domUpdates.wrongGuess();
+      this.getCurrentPlayer();
     }
 
     // the user will enter in the whole puzzle WITH SPACES
