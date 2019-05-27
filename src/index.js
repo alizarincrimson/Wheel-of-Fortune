@@ -33,6 +33,10 @@ $(document).ready(() => {
     loadPuzzleData();
   });
 
+  $('#new-game').on('click', () => {
+    location.reload(true);
+  });
+
   function hideForm() {
     $('.gameboard').removeAttr('hidden')
     $('.name-inputs').hide()

@@ -34,7 +34,7 @@ class Turn {
     console.log("it evals Spin!");
     console.log("wheelResult pleaasseee: ", this.round.wheel.spinResult);
     if (typeof this.round.wheel.spinResult === "number") {
-      return true
+      return true;
     } else if (this.round.wheel.spinResult === 'BANKRUPT' || 'LOSE A TURN') {
       this.currentPlayer.roundScore = 0;
       return false;
@@ -48,7 +48,7 @@ class Turn {
     let splitPuzzle = puzzle.splitAnswer;
     if (splitPuzzle.includes(guess)) {
       this.currentPlayer.roundScore += this.round.wheel.spinResult;
-      return true
+      return true;
     } else {
       domUpdates.wrongLetter();
       this.getCurrentPlayer();
