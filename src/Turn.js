@@ -1,6 +1,5 @@
 import Game from "./Game";
-
-
+import domUpdates from './domUpdates';
 
 class Turn {
   constructor(round, players, wheel, puzzle) {
@@ -24,10 +23,10 @@ class Turn {
 
   buyVowel(vowel) {
     // (this.currentPlayer.roundScore >= 100) {
-    //   this.currentPlayer.roundScore -= 100
-    //     evaluateGuess(vowel);
+    //   this.currentPlayer.roundScore -= 100;
+    //   evaluateGuess(vowel);
     // } else {
-    //     domUpdates.vowelError();
+    //   domUpdates.vowelError();
     // }
   }
 
@@ -36,7 +35,7 @@ class Turn {
     console.log("wheelResult pleaasseee: ", this.round.wheel.spinResult);
     if (typeof this.round.wheel.spinResult === "number") {
       return true
-    } else if (this.round.wheel.spinResult === "BANKRUPT") {
+    } else if (this.round.wheel.spinResult === 'BANKRUPT' || 'LOSE A TURN') {
       this.currentPlayer.roundScore = 0;
       return false;
     } else {
