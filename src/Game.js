@@ -7,7 +7,7 @@ import Wheel from "./Wheel";
 class Game {
   constructor(data) {
     this.data = data;
-    console.log("construct data: ", this.data)
+    // console.log("construct data: ", this.data)
     this.players = [];
     this.numberOfRounds = 0;
     this.puzzleSet = [];
@@ -27,11 +27,11 @@ class Game {
     this.getSinglePuzzle();
     this.getWheel();
     let newRound = new Round(this, this.puzzle, this.players, this.wheel);
-    console.log("in game, newRound: ", newRound)
+    // console.log("in game, newRound: ", newRound)
     this.round = newRound;
-    console.log("game.round: ", this.round = newRound);
-    console.log('puzzleSet:', this.puzzleSet);
-    console.log('game.wheel:', this.wheel)
+    // console.log("game.round: ", this.round = newRound);
+    // console.log('puzzleSet:', this.puzzleSet);
+    // console.log('game.wheel:', this.wheel)
     this.numberOfRounds++;
     // console.log("game.numofRounds: ", this.numberOfRounds++)
   }
@@ -68,6 +68,7 @@ class Game {
     // Once and if this.round is greater than 4,
     // determine the winner by the highest score.
     // should return winner.
+    // invokes bonus round.
   }
 
   createBonusRound(winner) {
