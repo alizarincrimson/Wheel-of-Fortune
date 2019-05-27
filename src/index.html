@@ -17,8 +17,9 @@
     <button type="submit" id="start-game">Start Playing!</button>
   </form>
   <main class="gameboard" hidden>
+    <section class="category-section">
+    </section>
     <section class="puzzle-section">
-
     </section>
     <section class="wheel-section">
       <img class="poke-wheel" src="https://i.postimg.cc/JnzGWgNw/pokewheel-px.png"
@@ -45,9 +46,14 @@
         <p>Score: <span id="player-3-score"></span></p>
       </div>
     </section>
+
+    <section class="message-section">
+      <p class="wrong-letter msg-hide">Letter not found in puzzle!</p>
+      <p class="vowel-error msg-hide">You don't have enough to buy a vowel!</p>
+    </section>
     <section class="guessed-letter-bank">
-      <h2>Guessed Letters:</h2>
-      <p></p>
+        <h2>Guessed Letters:</h2>
+        <p></p>
     </section>
     <section class="buttons-section">
       <form class="player-buttons">

@@ -1,5 +1,7 @@
 import Game from "./Game";
 
+
+
 class Turn {
   constructor(round, players, wheel, puzzle) {
     this.round = round;
@@ -14,34 +16,32 @@ class Turn {
   
   getCurrentPlayer() {
     let playerIndex = this.players.indexOf(this.currentPlayer);
-    this.currentPlayer = this.players[playerIndex + 1];
+      this.currentPlayer = this.players[playerIndex + 1];
     if (this.currentPlayer === undefined) {
       this.currentPlayer = this.players[0];
     }
   }
 
-  buyVowel(player, vowel) {
-    if (this.currentPlayer.score >= 100) {
-      this.currentPlayer.roundScore = this.currentPlayer.roundScore - 100
-      evaluateGuess()
-    } else {
-      return `You have insufficient funds to buy a vowel.`
-    }
-    // the vowel is going to passed though this method as an argument when it is clicked on.
-    // then the vowel will be passed through as an argument for the evaluateGuess method.
+  buyVowel(vowel) {
+    // (this.currentPlayer.roundScore >= 100) {
+    //   this.currentPlayer.roundScore -= 100
+    //     evaluateGuess(vowel);
+    // } else {
+    //     domUpdates.vowelError();
+    // }
   }
 
   evaluateSpin() {
-    console.log("it evals Spin!")
-    console.log("wheelResult pleaasseee: ", this.round.wheel.spinResult)
+    console.log("it evals Spin!");
+    console.log("wheelResult pleaasseee: ", this.round.wheel.spinResult);
     if (typeof this.round.wheel.spinResult === "number") {
       return true
     } else if (this.round.wheel.spinResult === "BANKRUPT") {
       this.currentPlayer.roundScore = 0;
-      return false
+      return false;
     } else {
       getCurrentPlayer();
-      return false
+      return false;
     }
   }
 
@@ -61,6 +61,7 @@ class Turn {
       // remove class hidden from letter
       // and return true
     // otherwise
+      // domUpdates.wrongLetter();
       // invoke getCurrentPlayer
       // and return false
       /*
@@ -90,7 +91,7 @@ class Turn {
       // invoke getCurrentPlayer
       // and return false
   }
-
+    
 }
 
 export default Turn;
