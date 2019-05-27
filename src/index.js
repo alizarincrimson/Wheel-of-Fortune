@@ -19,6 +19,7 @@ fetch('https://fe-apps.herokuapp.com/api/v1/gametime/1903/wheel-of-fortune/data'
 $(document).ready(() => {
   let game;
   let possiblePoints;
+
   $('#start-game').on('click', (e) => {
     e.preventDefault();
     const name1 = $('#input-name-1').val();
@@ -59,19 +60,31 @@ $(document).ready(() => {
     e.preventDefault();
     possiblePoints = game.wheel.getRandomValue();
     $('#wheel-spin').text(possiblePoints);
-    if (game.round.turn.evaluateSpin() === true) {
-      console.log("it evals guess!")
+    if (game.round.turn.evaluateSpin(possiblePoints) === true) {
+      // console.log("it evals guess!")
       //display input bar and submit button
       $('.guess-letter-inputs').removeAttr('hidden')
     }
   });
+
+  $('submit-letter').on('click', function() {
+    //on click, get val of guess input
+    // evaluate guess
+    // pass argument of input value
+    // conditional that checks if evalutaeGuess returned true
+      // if true invoke revelGuessLetters
+  });
+
+  function revealGuessLetters(guess) {
+    // should reveal the letter === guess on the dom puzzle
+  }
 
   $('#solve-puzzle').on('click', function(e) {
     //display a new input bar and submit button (form)
     e.preventDefault();
   })
 
-  $().on('click', function(e) {
+  $('submit').on('click', function(e) {
     //on click, get val of guess input
     //invoke solvepuzzle method
     // pass argument of input value

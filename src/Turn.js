@@ -5,9 +5,9 @@ class Turn {
   constructor(round, players, wheel, puzzle) {
     this.round = round;
     this.players = players;
-    console.log("playersProp: ", this.players)
+    // console.log("playersProp: ", this.players)
     this.wheel = wheel;
-    console.log("wheelProp: ", this.wheel)
+    // console.log("wheelProp: ", this.wheel)
     this.puzzle = puzzle
     this.currentPlayer = players[0];
     // this.spin
@@ -30,13 +30,14 @@ class Turn {
     }
   }
 
-  evaluateSpin() {
-    console.log("it evals Spin!");
-    console.log("wheelResult pleaasseee: ", this.round.wheel.spinResult);
-    if (typeof this.round.wheel.spinResult === "number") {
+  evaluateSpin(possiblePoints) {
+    // console.log("it evals Spin!");
+    // console.log("wheelResult pleaasseee: ", this.round.wheel.spinResult);
+    if (typeof possiblePoints === "number") {
       return true
-    } else if (this.round.wheel.spinResult === 'BANKRUPT' || 'LOSE A TURN') {
+    } else if (possiblePoints === 'BANKRUPT') {
       this.currentPlayer.roundScore = 0;
+      getCurrentPlayer();
       return false;
     } else {
       getCurrentPlayer();
@@ -44,14 +45,15 @@ class Turn {
     }
   }
 
-  evaluateLetterGuess(guess) {
-    let splitPuzzle = puzzle.splitAnswer;
-    if (splitPuzzle.includes(guess)) {
-      this.currentPlayer.roundScore += this.round.wheel.spinResult;
-      return true
+  evaluateLetterGuess(guess, possiblePoints) {
+    let splitPuzzle = this.puzzle.splitAnswer;
+    if (splitPuzzle.includes(guess.toUpperCase())) {
+      this.currentPlayer.roundScore += possiblePoints;
+      return true;
     } else {
-      domUpdates.wrongLetter();
+      // domUpdates.wrongLetter();
       this.getCurrentPlayer();
+      return false;
     }
     // takes in the guess from either spinWheel or buyVowel method
     // it evaluates if the the puzzle includes the guess value
@@ -73,13 +75,15 @@ class Turn {
   }
 
   solvePuzzle(guess, possiblePoints) {
-    let puzzleAnswer = puzzle.correctAnswer;
+    let puzzleAnswer = this.puzzle.correctAnswer;
     if (guess.toUpperCase() === puzzleAnswer) {
       this.currentPlayer.roundScore += possiblePoints 
-      this.round.endRound()
+      this.round.roundEnd();
+      return true;
     } else {
-      domUpdates.wrongGuess();
+      // domUpdates.wrongGuess();
       this.getCurrentPlayer();
+      return false
     }
 
     // the user will enter in the whole puzzle WITH SPACES
