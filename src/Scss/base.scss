@@ -119,7 +119,7 @@ main {
   grid-template-areas:
   "player puzzle puzzle"
   "player current-player wheel"
-  "letters letters buttons";
+  "letters guess buttons";
   padding: 10px;
 }
 
@@ -193,6 +193,11 @@ main {
     flex-wrap: wrap;
     justify-content: center;
   }
+}
+
+.guess-inputs {
+  grid-area: guess;
+  border: 1px black solid;
 }
 
 h2 {
