@@ -46,19 +46,28 @@
         <p>Score: <span id="player-3-score"></span></p>
       </div>
     </section>
+
     <section class="message-section">
+      <p class="wrong-guess msg-hide">Sorry, that guess isn't correct!</p>
       <p class="wrong-letter msg-hide">Letter not found in puzzle!</p>
       <p class="vowel-error msg-hide">You don't have enough to buy a vowel!</p>
     </section>
-    <section class="letters-section">
-      <h2>Consonants</h2>
-    
+    <section class="guessed-letter-bank">
+        <h2>Guessed Letters:</h2>
+        <p></p>
     </section>
     <section class="buttons-section">
       <form class="player-buttons">
         <button id="spin-wheel">Spin Wheel</button>
-        <button id="buy-vowel">Buy Vowel</button>
+        <button id="buy-vowel" onsubmit="">Buy Vowel</button>
         <button id="solve-puzzle">Solve Puzzle</button>
+      </form>
+      <!-- <form class="buy-vowel-inputs" hidden>
+        <button id=""></button>
+      </form> -->
+      <form class="guess-letter-inputs" hidden>
+        <input type="text" name="guess" id="guess-letter" placeholder="Guess a Letter">
+        <button type="button" name="submit-guess" id="submit-guess">Submit Guess</button>
       </form>
     </section>
   </main>

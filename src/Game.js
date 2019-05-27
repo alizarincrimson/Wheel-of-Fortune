@@ -35,11 +35,11 @@ class Game {
 
   createRound() {
     let wheel = new Wheel(this.data);
-    // console.log('game - wheelClass: ', wheel);
+    console.log('game - wheelClass: ', wheel);
     wheel.getWheelValues();
     this.wheel = wheel;
     // let shuffledWheelValues = wheel.wheelValues
-    // console.log('game - wheelValues: ', wheel.wheelValues);
+    console.log('game - wheelValues: ', this.wheel);
     this.getRandomPuzzles(this.data);
     console.log("game - randomVals: ", this.getRandomPuzzles(this.data))
     let puzzle = new Puzzle(this.puzzleSet.pop());

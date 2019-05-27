@@ -25,8 +25,8 @@ class Puzzle {
         return `<div class="puzzle-letter hidden">${letter}</div>`
       }
     })
-    return blockLetter;
     domUpdates.displayCategory(this.singlePuzzle.category);
+    return blockLetter;
   }
 
   setupRound() {
