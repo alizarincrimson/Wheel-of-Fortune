@@ -27,7 +27,7 @@ class Round {
   }
 
   roundEnd() {
-    let newRound = game.createRound();
+    let newRound = this.game.createRound();
   }
 };
 

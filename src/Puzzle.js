@@ -2,19 +2,19 @@ import domUpdates from './domUpdates';
 
 class Puzzle {
   constructor(singlePuzzle) {
-    console.log(singlePuzzle)
+    // console.log(singlePuzzle)
     this.singlePuzzle = singlePuzzle;
-    console.log('singlePuzz: ', singlePuzzle)
+    // console.log('singlePuzz: ', singlePuzzle)
     this.category = this.singlePuzzle.category;
-    console.log('puzzleCat: ', this.category)
+    // console.log('puzzleCat: ', this.category)
     this.numLetters = this.singlePuzzle.total_number_of_letters;
-    console.log('numLet: ', this.numLetters)
+    // console.log('numLet: ', this.numLetters)
     this.numWords = this.singlePuzzle.number_of_words;
-    console.log('numWords: ', this.numWords)
+    // console.log('numWords: ', this.numWords)
     this.correctAnswer = null || this.singlePuzzle.correct_answer.toUpperCase();
-    console.log('correctAns: ', this.correctAnswer)
+    // console.log('correctAns: ', this.correctAnswer)
     this.splitAnswer = this.correctAnswer.toUpperCase().split('');
-    console.log('splitAns: ', this.splitAnswer)
+    // console.log('splitAns: ', this.splitAnswer)
   }
 
   formatPuzzle() {
