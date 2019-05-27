@@ -34,6 +34,10 @@ $(document).ready(() => {
     loadPuzzleData();
   });
 
+  $('#new-game').on('click', () => {
+    location.reload(true);
+  });
+
   function hideForm() {
     $('.gameboard').removeAttr('hidden')
     $('.name-inputs').hide()
@@ -63,7 +67,7 @@ $(document).ready(() => {
     if (game.round.turn.evaluateSpin(possiblePoints) === true) {
       // console.log("it evals guess!")
       //display input bar and submit button
-      $('.guess-letter-inputs').removeAttr('hidden')
+      $('.guess-inputs').removeAttr('hidden')
     }
   });
 

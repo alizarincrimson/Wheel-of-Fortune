@@ -49,6 +49,7 @@ class Turn {
     let splitPuzzle = this.puzzle.splitAnswer;
     if (splitPuzzle.includes(guess.toUpperCase())) {
       this.currentPlayer.roundScore += possiblePoints;
+
       return true;
     } else {
       // domUpdates.wrongLetter();
