@@ -7,10 +7,11 @@ import Wheel from "./Wheel";
 class Game {
   constructor(data) {
     this.data = data;
-    console.log("construct data: ", this.data)
+    // console.log("construct data: ", this.data)
     this.players = [];
     this.numberOfRounds = 0;
     this.puzzleSet = [];
+    this.puzzle;
     this.round;
     this.wheel;
   }
@@ -22,7 +23,7 @@ class Game {
     this.players.push(p1, p2, p3);
   }
 
-  getRandomPuzzles(data) {
+  getRandomPuzzles() {
     let allPuzzles = [];
     Object.keys(this.data.puzzles).forEach(type => {
       this.data.puzzles[type].puzzle_bank.forEach(puzzle => {
@@ -33,25 +34,34 @@ class Game {
     return this.puzzleSet = allPuzzles.slice(0, 5);
   }
 
-  createRound() {
+  getSinglePuzzle() {
+    this.getRandomPuzzles(this.data);
+    // console.log("game - randomVals: ", this.getRandomPuzzles(this.data))
+    let newPuzzle = new Puzzle(this.puzzleSet.pop());
+    this.puzzle = newPuzzle;
+    // console.log("game - newPuzz: ", puzzle)
+  }
+
+  getWheel() {
     let wheel = new Wheel(this.data);
-    console.log('game - wheelClass: ', wheel);
+    // console.log('game - wheelClass: ', wheel);
     wheel.getWheelValues();
     this.wheel = wheel;
     // let shuffledWheelValues = wheel.wheelValues
-    console.log('game - wheelValues: ', this.wheel);
-    this.getRandomPuzzles(this.data);
-    console.log("game - randomVals: ", this.getRandomPuzzles(this.data))
-    let puzzle = new Puzzle(this.puzzleSet.pop());
-    console.log("game - newPuzz: ", puzzle)
-    let newRound = new Round(this, puzzle, this.players, wheel);
-    console.log("game - newRound: ", newRound)
+    // console.log('game - wheelValues: ', this.wheel);
+  }
+
+  createRound() {
+    getSinglePuzzle();
+    getWheel();
+    let newRound = new Round(this, this.puzzle, this.players, this.wheel);
+    // console.log("game - newRound: ", newRound)
     this.round = newRound;
-    console.log("game - round: ", this.round = newRound);
-    console.log('puzzleSet:', this.puzzleSet);
-    console.log('wheel:', wheel)
+    // console.log("game - round: ", this.round = newRound);
+    // console.log('puzzleSet:', this.puzzleSet);
+    // console.log('wheel:', wheel)
     this.numberOfRounds++;
-    console.log("game - numofRounds: ", this.numberOfRounds++)
+    // console.log("game - numofRounds: ", this.numberOfRounds++)
   }
 
   determineWinner() {
