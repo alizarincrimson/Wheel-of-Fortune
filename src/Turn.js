@@ -22,7 +22,7 @@ class Turn {
   }
 
   buyVowel(vowel) {
-    (this.currentPlayer.roundScore >= 100) {
+    if (this.currentPlayer.roundScore >= 100) {
       this.currentPlayer.roundScore -= 100;
       evaluateLetterGuess(vowel);
     } else {
