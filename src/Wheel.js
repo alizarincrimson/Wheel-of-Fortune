@@ -15,7 +15,7 @@ class Wheel {
   getRandomValue() {
     const value = this.wheelValues[Math.floor(Math.random() * this.wheelValues.length)];
     this.spinResult = value;
-    console.log("wheel - getRandomValue: ", this.spinResult)
+    // console.log("wheel - getRandomValue: ", this.spinResult)
     return value;
   }
 }

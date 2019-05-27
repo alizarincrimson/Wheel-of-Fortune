@@ -22,12 +22,12 @@ class Turn {
   }
 
   buyVowel(vowel) {
-    // (this.currentPlayer.roundScore >= 100) {
-    //   this.currentPlayer.roundScore -= 100;
-    //   evaluateLetterGuess(vowel);
-    // } else {
-    //   domUpdates.vowelError();
-    // }
+    if (this.currentPlayer.roundScore >= 100) {
+      this.currentPlayer.roundScore -= 100;
+      this.evaluateLetterGuess(vowel);
+    } else {
+      domUpdates.vowelError();
+    }
   }
 
   evaluateSpin() {

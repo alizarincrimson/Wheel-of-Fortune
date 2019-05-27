@@ -7,7 +7,7 @@ import Wheel from "./Wheel";
 class Game {
   constructor(data) {
     this.data = data;
-    // console.log("construct data: ", this.data)
+    console.log("construct data: ", this.data)
     this.players = [];
     this.numberOfRounds = 0;
     this.puzzleSet = [];
@@ -21,6 +21,19 @@ class Game {
     let p2 = new Player(name2, 2);
     let p3 = new Player(name3, 3);
     this.players.push(p1, p2, p3);
+  }
+
+  createRound() {
+    this.getSinglePuzzle();
+    this.getWheel();
+    let newRound = new Round(this, this.puzzle, this.players, this.wheel);
+    console.log("in game, newRound: ", newRound)
+    this.round = newRound;
+    console.log("game.round: ", this.round = newRound);
+    console.log('puzzleSet:', this.puzzleSet);
+    console.log('game.wheel:', this.wheel)
+    this.numberOfRounds++;
+    // console.log("game.numofRounds: ", this.numberOfRounds++)
   }
 
   getRandomPuzzles() {
@@ -49,19 +62,6 @@ class Game {
     this.wheel = wheel;
     // let shuffledWheelValues = wheel.wheelValues
     // console.log('game - wheelValues: ', this.wheel);
-  }
-
-  createRound() {
-    getSinglePuzzle();
-    getWheel();
-    let newRound = new Round(this, this.puzzle, this.players, this.wheel);
-    // console.log("game - newRound: ", newRound)
-    this.round = newRound;
-    // console.log("game - round: ", this.round = newRound);
-    // console.log('puzzleSet:', this.puzzleSet);
-    // console.log('wheel:', wheel)
-    this.numberOfRounds++;
-    // console.log("game - numofRounds: ", this.numberOfRounds++)
   }
 
   determineWinner() {
