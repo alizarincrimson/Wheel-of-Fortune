@@ -1,3 +1,4 @@
+import domUpdates from './domUpdates';
 import Puzzle from './Puzzle';
 import Turn from './Turn';
 

@@ -1,3 +1,4 @@
+import domUpdates from './domUpdates';
 import Player from "./Player";
 import Round from "./Round";
 import Puzzle from "./Puzzle";
