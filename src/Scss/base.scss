@@ -179,6 +179,10 @@ main {
   visibility: hidden;
 }
 
+.wrong-guess {
+  visibility: hidden;
+}
+
 .buttons-section {
   border: 3px black solid;
   grid-area: buttons;
