@@ -13,4 +13,8 @@ export default {
   wrongLetter() {
     $('.wrong-letter').css('visibility', 'visible');
   },
+
+  wrongGuess() {
+    $('.wrong-guess').css('visibility', 'visible');
+  },
 }
