@@ -13,21 +13,12 @@ class Round {
     this.incorrectGuesses = [];
   }
 
-    // case: if current player is players index 2 (the last player)
-    // then assign currentPlayer to index 0
-    // case: assign currentPlayer to players[i] + 1
-  
-  updateRoundScore(spinValue) {
-  // if (value of turn) exists
-  // local round score += spinValue
-  }
-
-  roundWinner(player) {
-    
-  }
-
   roundEnd() {
+    // domUpdates.roundWinner();
+    domUpdates.clearPuzzle();
     let newRound = this.game.createRound();
+    console.log("yo");
+    // loadPuzzleData();
   }
 };
 
