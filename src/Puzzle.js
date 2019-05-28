@@ -22,12 +22,14 @@ class Puzzle {
       if (letter == " ") {
         return `<div class="space"></div>`
       } else {
-        return `<div class="puzzle-letter hidden">${letter}</div>`
+        return `<div class="puzzle-letter"><p class="${letter}" hidden>${letter}</p></div>`
       }
     })
     domUpdates.displayCategory(this.singlePuzzle.category);
     return blockLetter;
   }
+
+  //put in domUpdates
 
   setupRound() {
     // show this.puzzle.category on the DOM
