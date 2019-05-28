@@ -49,7 +49,6 @@ class Turn {
       return true;
     } else {
       this.round.incorrectGuesses.push(guess);
-      console.log(this.round.incorrectGuesses);
       // domUpdates.wrongLetter();
       this.getCurrentPlayer();
       return false;

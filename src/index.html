@@ -70,14 +70,14 @@
     <section class="guess-inputs" hidden>
         <h2>Guess A Letter:</h2>
           <form class="guess-letter-inputs">
-            <input id="guess-letter" required pattern="b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z">
+            <input id="guess-letter" maxlength="1" pattern="b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z" required>
             <button id="submit-guess">Submit Guess</button>
           </form>
     </section>
     <section class="solve-game" hidden>
         <h2>Solve the Puzzle:</h2>
           <form class="solve-inputs">
-            <input id="solve-attempt" required>
+            <input id="solve-attempt" pattern="[A-Za-z]" required>
             <button id="submit-solve">Submit Guess</button>
           </form>
     </section>

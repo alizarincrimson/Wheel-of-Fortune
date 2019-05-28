@@ -11,7 +11,6 @@ class Round {
     this.turn = new Turn(this, this.players, this.wheel, this.puzzle);
     this.wheel = wheel;
     this.incorrectGuesses = [];
-    // guessed letters is an empty array stored here
   }
 
     // case: if current player is players index 2 (the last player)

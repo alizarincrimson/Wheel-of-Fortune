@@ -118,20 +118,8 @@ $(document).ready(() => {
     //invoke solvepuzzle method
     // pass argument of input value
   })
-});
 
-    // possiblePoints = this.currentPlayer.roundScore;
-    // game.round.turn.solvePuzzle(guess, possiblePoints)
-    // if (game.round.turn.solvePuzzle(guess, possiblePoints) === true) {
-    //   $('.puzzle-letter').removeClass("hidden");
-  // }
-  // let guess = $('#solve-attempt').val().toUpperCase();
-  // game.round.turn.solvePuzzle(guess, possiblePoints);
-  // if (game.round.turn.solvePuzzle(guess, possiblePoints)) {
-  //   $('.puzzle-letter').removeClass("hidden");
-  //   return `Congratulations`
-  //     revealGuessLetters();
-  //   }
-  // $('.incorrect-letters').text(`${game.round.incorrectGuesses}`)
-  // $('.guess-inputs').attr("hidden", "true")
-  // $('form').trigger("reset");
+  function updateScores () {
+    
+  }
+});
