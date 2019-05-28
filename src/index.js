@@ -65,21 +65,45 @@ $(document).ready(() => {
     possiblePoints = game.wheel.getRandomValue();
     $('#wheel-spin').text(possiblePoints);
     if (game.round.turn.evaluateSpin(possiblePoints) === true) {
-      // console.log("it evals guess!")
-      //display input bar and submit button
       $('.guess-inputs').removeAttr('hidden')
     }
   });
 
-  $('submit-letter').on('click', function() {
+  $('#submit-guess').on('click', function(e) {
+    e.preventDefault();
+    let guess = $('#guess-letter').val().toUpperCase();
+    game.round.turn.evaluateLetterGuess(guess, possiblePoints);
+    if (game.round.turn.evaluateLetterGuess(guess, possiblePoints)) {
+      console.log("guess is in puzzle!")
+        revealGuessLetters();
+      }
+    $('.incorrect-letters').text(`${game.round.incorrectGuesses}`)
+    $('.guess-inputs').attr("hidden", "true")
+    $('form').trigger("reset");
+  })
+
+  // $('submit-letter').on('click', function() {
     //on click, get val of guess input
     // evaluate guess
     // pass argument of input value
     // conditional that checks if evalutaeGuess returned true
       // if true invoke revelGuessLetters
-  });
+  // });
 
-  function revealGuessLetters(guess) {
+  function revealGuessLetters() {
+    let guess = $('#guess-letter').val().toUpperCase();
+    // console.log("revealing guess letters!")
+    // console.log("game.puzzle.splitAnswer: ", game.puzzle.splitAnswer)
+    game.puzzle.splitAnswer.forEach(function(letter) {
+      // console.log("guess: ", guess)
+      // console.log("letter: ", letter)
+      if (guess === letter) {
+        //
+        $('.puzzle-letter').removeClass("hidden");
+      }
+    })
+    // let guess = $('#guess-letter').val().toUpperCase();
+    // if (guess === splitPuzzle.includes(guess.toUpperCase()))
     // should reveal the letter === guess on the dom puzzle
   }
 

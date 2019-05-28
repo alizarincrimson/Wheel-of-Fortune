@@ -10,6 +10,7 @@ class Round {
     this.players = players;
     this.turn = new Turn(this, this.players, this.wheel, this.puzzle);
     this.wheel = wheel;
+    this.incorrectGuesses = [];
     // guessed letters is an empty array stored here
   }
 
