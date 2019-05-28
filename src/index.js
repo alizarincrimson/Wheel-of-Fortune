@@ -32,7 +32,11 @@ $(document).ready(() => {
     hideForm();
     loadPlayerData(name1, name2, name3);
     loadPuzzleData();
+    $('.player-1-backview').removeAttr("hidden")
+    // $(${game.round.turn.currentPlayer}).removeAttr("hidden")
   });
+
+  
 
   $('#new-game').on('click', () => {
     location.reload(true);
@@ -47,14 +51,19 @@ $(document).ready(() => {
     $('.player-name-1').text(name1);
     $('.player-name-2').text(name2);
     $('.player-name-3').text(name3);
-    $('#player-1-score').text(`${game.players[0].totalScore}`);
-    $('#player-2-score').text(`${game.players[1].totalScore}`);
-    $('#player-3-score').text(`${game.players[2].totalScore}`);
+    $('#player-1-total-score').text(`${game.players[0].totalScore}`);
+    $('#player-2-total-score').text(`${game.players[1].totalScore}`);
+    $('#player-3-total-score').text(`${game.players[2].totalScore}`);
+    $('#player-1-round-score').text(`${game.players[0].roundScore}`);
+    $('#player-2-round-score').text(`${game.players[1].roundScore}`);
+    $('#player-3-round-score').text(`${game.players[2].roundScore}`);
   }
 
   function loadPuzzleData() {
     $('.puzzle-section').append(game.round.puzzle.formatPuzzle());
   }
+
+  
 
   $('#buy-vowel').on('click', function(e) {
     e.preventDefault();
@@ -73,26 +82,21 @@ $(document).ready(() => {
     e.preventDefault();
     let guess = $('#guess-letter').val().toUpperCase();
     if (game.round.turn.evaluateLetterGuess(guess, possiblePoints)) {
-      console.log("guess is in puzzle!")
         revealGuessLetters();
+  
       }
     $('.incorrect-letters').text(`${game.round.incorrectGuesses}`)
     $('.guess-inputs').attr("hidden", "true")
     $('form').trigger("reset");
   })
 
+  function updateScores() {
+    $("#player-1-total-score")
+  }
+
   function revealGuessLetters() {
     let guess = $('#guess-letter').val().toUpperCase();
     $("." + guess).removeAttr("hidden");
-    console.log(guess)
-    // game.puzzle.splitAnswer.forEach(function(letter) {
-    //   if (guess === letter) {
-        // $("#" + guess).show();
-      // }
-    // }
-    // let guess = $('#guess-letter').val().toUpperCase();
-    // if (guess === splitPuzzle.includes(guess.toUpperCase()))
-    // should reveal the letter === guess on the dom puzzle
   }
 
   $('#solve-puzzle').on('click', function(e) {
@@ -109,12 +113,7 @@ $(document).ready(() => {
     }
     $('.solve-game').attr("hidden", "true")
     $('form').trigger("reset");
-    //on click, get val of guess input
-    //invoke solvepuzzle method
-    // pass argument of input value
   })
 
-  function updateScores () {
-    
-  }
+
 });
