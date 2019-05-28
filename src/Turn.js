@@ -28,16 +28,16 @@ class Turn {
   }
 
   evaluateSpin(possiblePoints) {
-    console.log("it evals Spin!");
-    console.log("wheelResult pleaasseee: ", possiblePoints);
     if (typeof possiblePoints === "number") {
       return true
     } else if (possiblePoints === 'BANKRUPT') {
       this.currentPlayer.roundScore = 0;
       this.getCurrentPlayer();
+      domUpdates.switchPlayerPokemon(this.currentPlayer);
       return false;
     } else {
       this.getCurrentPlayer();
+      domUpdates.switchPlayerPokemon(this.currentPlayer);
       return false;
     }
   }
@@ -46,30 +46,14 @@ class Turn {
     let splitPuzzle = this.puzzle.splitAnswer;
     if (splitPuzzle.includes(guess.toUpperCase())) {
       this.currentPlayer.roundScore += possiblePoints;
-      return true;
+      return true
     } else {
       this.round.incorrectGuesses.push(guess);
       // domUpdates.wrongLetter();
       this.getCurrentPlayer();
-      return false;
+      domUpdates.switchPlayerPokemon(this.currentPlayer);
+      return false
     }
-    // takes in the guess from either spinWheel or buyVowel method
-    // it evaluates if the the puzzle includes the guess value
-    // if the puzzle does include the guess value
-      // splice the value(s) of guess from the puzzle where it's included
-      // remove class hidden from letter
-      // and return true
-    // otherwise
-      // domUpdates.wrongLetter();
-      // invoke getCurrentPlayer
-      // and return false
-      /*
-      - A random element will be chosen for my spin
-    - If a bankrupt element is chosen, my score/account will be reset to 0
-    - If a lose-a-turn element is chosen, my turn will end
-    - If an element is chosen with a dollar amount, I will be prompted to choose a consonant
-      */
-    // 
   }
 
   solvePuzzle(guess, possiblePoints) {
@@ -81,16 +65,9 @@ class Turn {
     } else {
       // domUpdates.wrongGuess();
       this.getCurrentPlayer();
+      domUpdates.switchPlayerPokemon(this.currentPlayer);
       return false
     }
-
-    // the user will enter in the whole puzzle WITH SPACES
-    // it will then need to evaluate the guess of the player
-    // if guess stricly equals the joined puzzle(in array form)
-      // return true
-    //  otherwise 
-      // invoke getCurrentPlayer
-      // and return false
   }
     
 }
