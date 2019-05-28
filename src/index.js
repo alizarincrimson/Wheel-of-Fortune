@@ -83,16 +83,13 @@ $(document).ready(() => {
 
   function revealGuessLetters() {
     let guess = $('#guess-letter').val().toUpperCase();
-    // console.log("revealing guess letters!")
-    // console.log("game.puzzle.splitAnswer: ", game.puzzle.splitAnswer)
-    game.puzzle.splitAnswer.forEach(function(letter) {
-      // console.log("guess: ", guess)
-      // console.log("letter: ", letter)
-      if (guess === letter) {
-        //
-        $('.puzzle-letter').removeClass("hidden");
-      }
-    })
+    $("." + guess).removeAttr("hidden");
+    console.log(guess)
+    // game.puzzle.splitAnswer.forEach(function(letter) {
+    //   if (guess === letter) {
+        // $("#" + guess).show();
+      // }
+    // }
     // let guess = $('#guess-letter').val().toUpperCase();
     // if (guess === splitPuzzle.includes(guess.toUpperCase()))
     // should reveal the letter === guess on the dom puzzle
@@ -107,7 +104,6 @@ $(document).ready(() => {
     e.preventDefault();
     let guess = $('#solve-attempt').val().toUpperCase();
     possiblePoints = game.round.turn.currentPlayer.roundScore;
-    // game.round.turn.solvePuzzle(guess, possiblePoints)
     if (game.round.turn.solvePuzzle(guess, possiblePoints) === true) {
       $('.puzzle-letter').removeClass("hidden");
     }
