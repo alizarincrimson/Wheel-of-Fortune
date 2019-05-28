@@ -21,6 +21,8 @@ class Puzzle {
     let blockLetter = this.splitAnswer.map((letter) => {
       if (letter == " ") {
         return `<div class="space"></div>`
+      } else if (letter == "-") {
+        return `<div class="puzzle-letter">-</div>`
       } else {
         return `<div class="puzzle-letter"><p class="${letter}" hidden>${letter}</p></div>`
       }

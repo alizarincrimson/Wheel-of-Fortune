@@ -31,7 +31,6 @@ $(document).ready(() => {
     console.log('hey', game);
     domUpdates.hideForm();
     loadPlayerData(name1, name2, name3);
-    loadPuzzleData();
     $('.player-1-backview').removeAttr("hidden")
   });
 
@@ -49,10 +48,6 @@ $(document).ready(() => {
     $('#player-1-round-score').text(`${game.players[0].roundScore}`);
     $('#player-2-round-score').text(`${game.players[1].roundScore}`);
     $('#player-3-round-score').text(`${game.players[2].roundScore}`);
-  }
-
-  function loadPuzzleData() {
-    $('.puzzle-section').append(game.round.puzzle.formatPuzzle());
   }
 
   $('#buy-vowel').on('click', function(e) {
@@ -88,8 +83,8 @@ $(document).ready(() => {
   $('#submit-solve').on('click', function(e) {
     e.preventDefault();
     let guess = $('#solve-attempt').val().toUpperCase();
-    possiblePoints = game.round.turn.currentPlayer.roundScore;
-    if (game.round.turn.solvePuzzle(guess, possiblePoints) === true) {
+    if (game.round.turn.solvePuzzle(guess) === true) {
+      console.log("update", game.round.puzzle)
       $('.puzzle-letter').removeClass("hidden");
     }
     domUpdates.updatePlayerTotalScore(game.round.turn.currentPlayer);
