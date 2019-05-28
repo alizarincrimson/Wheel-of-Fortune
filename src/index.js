@@ -72,7 +72,6 @@ $(document).ready(() => {
   $('#submit-guess').on('click', function(e) {
     e.preventDefault();
     let guess = $('#guess-letter').val().toUpperCase();
-    game.round.turn.evaluateLetterGuess(guess, possiblePoints);
     if (game.round.turn.evaluateLetterGuess(guess, possiblePoints)) {
       console.log("guess is in puzzle!")
         revealGuessLetters();
@@ -108,7 +107,7 @@ $(document).ready(() => {
     e.preventDefault();
     let guess = $('#solve-attempt').val().toUpperCase();
     possiblePoints = game.round.turn.currentPlayer.roundScore;
-    game.round.turn.solvePuzzle(guess, possiblePoints)
+    // game.round.turn.solvePuzzle(guess, possiblePoints)
     if (game.round.turn.solvePuzzle(guess, possiblePoints) === true) {
       $('.puzzle-letter').removeClass("hidden");
     }
