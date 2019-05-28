@@ -56,10 +56,11 @@ class Turn {
     }
   }
 
-  solvePuzzle(guess, possiblePoints) {
+  solvePuzzle(guess) {
     let puzzleAnswer = this.puzzle.correctAnswer;
     if (guess.toUpperCase() === puzzleAnswer) {
-      this.currentPlayer.totalScore += possiblePoints 
+      this.currentPlayer.totalScore += this.currentPlayer.roundScore; 
+      domUpdates.updatePlayerTotalScore(this.currentPlayer);
       this.round.roundEnd();
       return true;
     } else {

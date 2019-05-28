@@ -9,6 +9,14 @@ export default {
     $('.name-inputs').hide()
   },
 
+  loadPuzzleData(puzzle) {
+    $('.puzzle-section').append(puzzle.formatPuzzle(puzzle));
+  },
+
+  clearPuzzle() {
+    $('.puzzle-section').empty()
+  },
+
   displayCategory(category) {
     $('.category-section').text(category);
   },
@@ -25,7 +33,7 @@ export default {
     $('.wrong-guess').css('visibility', 'visible');
   },
 
-  updatePlayerTotalScore() {
+  updatePlayerTotalScore(currentPlayer) {
     if (currentPlayer.id === 1) {
       $('#player-1-total-score').text(`${currentPlayer.totalScore}`)
     } else if (currentPlayer.id === 2) {

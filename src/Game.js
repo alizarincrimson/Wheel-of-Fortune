@@ -27,11 +27,8 @@ class Game {
     this.getSinglePuzzle();
     this.getWheel();
     let newRound = new Round(this, this.puzzle, this.players, this.wheel);
-    // console.log("in game, newRound: ", newRound)
+    domUpdates.loadPuzzleData(this.puzzle);
     this.round = newRound;
-    // console.log("game.round: ", this.round = newRound);
-    // console.log('puzzleSet:', this.puzzleSet);
-    // console.log('game.wheel:', this.wheel)
     this.numberOfRounds++;
     // console.log("game.numofRounds: ", this.numberOfRounds++)
   }
