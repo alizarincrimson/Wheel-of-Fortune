@@ -4,6 +4,11 @@ import Turn from './Turn';
 
 export default {
 
+  hideForm() {
+    $('.gameboard').removeAttr('hidden')
+    $('.name-inputs').hide()
+  },
+
   displayCategory(category) {
     $('.category-section').text(category);
   },
@@ -21,11 +26,23 @@ export default {
   },
 
   updatePlayerTotalScore() {
-    //will be fired at the end of a round
+    if (currentPlayer.id === 1) {
+      $('#player-1-total-score').text(`${currentPlayer.totalScore}`)
+    } else if (currentPlayer.id === 2) {
+      $('#player-2-total-score').text(`${currentPlayer.totalScore}`)
+    } else if (currentPlayer.id === 3) {
+      $('#player-3-total-score').text(`${currentPlayer.totalScore}`)
+    }
   },
 
-  updatePlayerRoundScore(roundScore) {
-    $('')
+  updatePlayerRoundScore(currentPlayer) {
+    if (currentPlayer.id === 1) {
+      $('#player-1-round-score').text(`${currentPlayer.roundScore}`)
+    } else if (currentPlayer.id === 2) {
+      $('#player-2-round-score').text(`${currentPlayer.roundScore}`)
+    } else if (currentPlayer.id === 3) {
+      $('#player-3-round-score').text(`${currentPlayer.roundScore}`)
+    }
   },
 
   switchPlayerPokemon(currentPlayer) {
@@ -39,5 +56,10 @@ export default {
       $('.player-2-backview').toggle();
       $('.player-3-backview').toggle();
     }
+  },
+
+  revealGuessLetters() {
+    let guess = $('#guess-letter').val().toUpperCase();
+    $("." + guess).removeAttr("hidden");
   }
 }
