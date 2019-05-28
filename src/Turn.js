@@ -5,12 +5,9 @@ class Turn {
   constructor(round, players, wheel, puzzle) {
     this.round = round;
     this.players = players;
-    // console.log("playersProp: ", this.players)
     this.wheel = wheel;
-    // console.log("wheelProp: ", this.wheel)
     this.puzzle = puzzle
     this.currentPlayer = players[0];
-    // this.spin
   }
   
   getCurrentPlayer() {
@@ -31,16 +28,16 @@ class Turn {
   }
 
   evaluateSpin(possiblePoints) {
-    // console.log("it evals Spin!");
-    // console.log("wheelResult pleaasseee: ", this.round.wheel.spinResult);
+    console.log("it evals Spin!");
+    console.log("wheelResult pleaasseee: ", possiblePoints);
     if (typeof possiblePoints === "number") {
       return true
     } else if (possiblePoints === 'BANKRUPT') {
       this.currentPlayer.roundScore = 0;
-      getCurrentPlayer();
+      this.getCurrentPlayer();
       return false;
     } else {
-      getCurrentPlayer();
+      this.getCurrentPlayer();
       return false;
     }
   }
@@ -49,9 +46,9 @@ class Turn {
     let splitPuzzle = this.puzzle.splitAnswer;
     if (splitPuzzle.includes(guess.toUpperCase())) {
       this.currentPlayer.roundScore += possiblePoints;
-
       return true;
     } else {
+      this.round.incorrectGuesses.push(guess);
       // domUpdates.wrongLetter();
       this.getCurrentPlayer();
       return false;
@@ -78,7 +75,7 @@ class Turn {
   solvePuzzle(guess, possiblePoints) {
     let puzzleAnswer = this.puzzle.correctAnswer;
     if (guess.toUpperCase() === puzzleAnswer) {
-      this.currentPlayer.roundScore += possiblePoints 
+      this.currentPlayer.totalScore += possiblePoints 
       this.round.roundEnd();
       return true;
     } else {

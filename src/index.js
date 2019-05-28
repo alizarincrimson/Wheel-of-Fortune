@@ -65,32 +65,60 @@ $(document).ready(() => {
     possiblePoints = game.wheel.getRandomValue();
     $('#wheel-spin').text(possiblePoints);
     if (game.round.turn.evaluateSpin(possiblePoints) === true) {
-      // console.log("it evals guess!")
-      //display input bar and submit button
       $('.guess-inputs').removeAttr('hidden')
     }
   });
 
-  $('submit-letter').on('click', function() {
-    //on click, get val of guess input
-    // evaluate guess
-    // pass argument of input value
-    // conditional that checks if evalutaeGuess returned true
-      // if true invoke revelGuessLetters
-  });
+  $('#submit-guess').on('click', function(e) {
+    e.preventDefault();
+    let guess = $('#guess-letter').val().toUpperCase();
+    if (game.round.turn.evaluateLetterGuess(guess, possiblePoints)) {
+      console.log("guess is in puzzle!")
+        revealGuessLetters();
+      }
+    $('.incorrect-letters').text(`${game.round.incorrectGuesses}`)
+    $('.guess-inputs').attr("hidden", "true")
+    $('form').trigger("reset");
+  })
 
-  function revealGuessLetters(guess) {
+  function revealGuessLetters() {
+    let guess = $('#guess-letter').val().toUpperCase();
+    // console.log("revealing guess letters!")
+    // console.log("game.puzzle.splitAnswer: ", game.puzzle.splitAnswer)
+    game.puzzle.splitAnswer.forEach(function(letter) {
+      // console.log("guess: ", guess)
+      // console.log("letter: ", letter)
+      if (guess === letter) {
+        //
+        $('.puzzle-letter').removeClass("hidden");
+      }
+    })
+    // let guess = $('#guess-letter').val().toUpperCase();
+    // if (guess === splitPuzzle.includes(guess.toUpperCase()))
     // should reveal the letter === guess on the dom puzzle
   }
 
   $('#solve-puzzle').on('click', function(e) {
-    //display a new input bar and submit button (form)
     e.preventDefault();
-  })
+    $('.solve-game').removeAttr('hidden')
+  });
 
-  $('submit').on('click', function(e) {
+  $('#submit-solve').on('click', function(e) {
+    e.preventDefault();
+    let guess = $('#solve-attempt').val().toUpperCase();
+    possiblePoints = game.round.turn.currentPlayer.roundScore;
+    // game.round.turn.solvePuzzle(guess, possiblePoints)
+    if (game.round.turn.solvePuzzle(guess, possiblePoints) === true) {
+      $('.puzzle-letter').removeClass("hidden");
+    }
+    $('.solve-game').attr("hidden", "true")
+    $('form').trigger("reset");
     //on click, get val of guess input
     //invoke solvepuzzle method
     // pass argument of input value
   })
+
+  function updateScores () {
+    
+  }
 });

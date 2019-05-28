@@ -54,7 +54,7 @@
     </section>
     <section class="guessed-letter-bank">
         <h2>Guessed Letters:</h2>
-        <p></p>
+        <p class="incorrect-letters"></p>
     </section>
     <section class="buttons-section">
       <form class="player-buttons">
@@ -68,12 +68,19 @@
       </form> -->
     </section>
     <section class="guess-inputs" hidden>
-        <h2>Guess Inputs:</h2>
+        <h2>Guess A Letter:</h2>
           <form class="guess-letter-inputs">
-            <input name="guess" id="guess-letter" required pattern="b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z">
+            <input id="guess-letter" maxlength="1" pattern="b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z" required>
             <button id="submit-guess">Submit Guess</button>
           </form>
-      </section>
+    </section>
+    <section class="solve-game" hidden>
+        <h2>Solve the Puzzle:</h2>
+          <form class="solve-inputs">
+            <input id="solve-attempt" pattern="[A-Za-z]" required>
+            <button id="submit-solve">Submit Guess</button>
+          </form>
+    </section>
   <!-- Do not include the index.js or main.bundle.js file here - it is done automatically by the webpack server -->
 </body>
 
