@@ -76,7 +76,7 @@ class Turn {
   solvePuzzle(guess, possiblePoints) {
     let puzzleAnswer = this.puzzle.correctAnswer;
     if (guess.toUpperCase() === puzzleAnswer) {
-      this.currentPlayer.roundScore += possiblePoints 
+      this.currentPlayer.totalScore += possiblePoints 
       this.round.roundEnd();
       return true;
     } else {

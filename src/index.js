@@ -82,14 +82,6 @@ $(document).ready(() => {
     $('form').trigger("reset");
   })
 
-  // $('submit-letter').on('click', function() {
-    //on click, get val of guess input
-    // evaluate guess
-    // pass argument of input value
-    // conditional that checks if evalutaeGuess returned true
-      // if true invoke revelGuessLetters
-  // });
-
   function revealGuessLetters() {
     let guess = $('#guess-letter').val().toUpperCase();
     // console.log("revealing guess letters!")
@@ -108,13 +100,38 @@ $(document).ready(() => {
   }
 
   $('#solve-puzzle').on('click', function(e) {
-    //display a new input bar and submit button (form)
     e.preventDefault();
-  })
+    $('.solve-game').removeAttr('hidden')
+  });
 
-  $('submit').on('click', function(e) {
+  $('#submit-solve').on('click', function(e) {
+    e.preventDefault();
+    let guess = $('#solve-attempt').val().toUpperCase();
+    possiblePoints = game.round.turn.currentPlayer.roundScore;
+    game.round.turn.solvePuzzle(guess, possiblePoints)
+    if (game.round.turn.solvePuzzle(guess, possiblePoints) === true) {
+      $('.puzzle-letter').removeClass("hidden");
+    }
+    $('.solve-game').attr("hidden", "true")
+    $('form').trigger("reset");
     //on click, get val of guess input
     //invoke solvepuzzle method
     // pass argument of input value
   })
 });
+
+    // possiblePoints = this.currentPlayer.roundScore;
+    // game.round.turn.solvePuzzle(guess, possiblePoints)
+    // if (game.round.turn.solvePuzzle(guess, possiblePoints) === true) {
+    //   $('.puzzle-letter').removeClass("hidden");
+  // }
+  // let guess = $('#solve-attempt').val().toUpperCase();
+  // game.round.turn.solvePuzzle(guess, possiblePoints);
+  // if (game.round.turn.solvePuzzle(guess, possiblePoints)) {
+  //   $('.puzzle-letter').removeClass("hidden");
+  //   return `Congratulations`
+  //     revealGuessLetters();
+  //   }
+  // $('.incorrect-letters').text(`${game.round.incorrectGuesses}`)
+  // $('.guess-inputs').attr("hidden", "true")
+  // $('form').trigger("reset");
