@@ -29,23 +29,15 @@ $(document).ready(() => {
     game.createPlayers(name1, name2, name3);
     game.createRound();
     console.log('hey', game);
-    hideForm();
+    domUpdates.hideForm();
     loadPlayerData(name1, name2, name3);
     loadPuzzleData();
     $('.player-1-backview').removeAttr("hidden")
-    // $(${game.round.turn.currentPlayer}).removeAttr("hidden")
   });
-
-  
 
   $('#new-game').on('click', () => {
     location.reload(true);
   });
-
-  function hideForm() {
-    $('.gameboard').removeAttr('hidden')
-    $('.name-inputs').hide()
-  }
 
   function loadPlayerData(name1, name2, name3) {
     $('.player-name-1').text(name1);
@@ -62,8 +54,6 @@ $(document).ready(() => {
   function loadPuzzleData() {
     $('.puzzle-section').append(game.round.puzzle.formatPuzzle());
   }
-
-  
 
   $('#buy-vowel').on('click', function(e) {
     e.preventDefault();
@@ -82,22 +72,13 @@ $(document).ready(() => {
     e.preventDefault();
     let guess = $('#guess-letter').val().toUpperCase();
     if (game.round.turn.evaluateLetterGuess(guess, possiblePoints)) {
-        revealGuessLetters();
-  
+        domUpdates.revealGuessLetters();
       }
     $('.incorrect-letters').text(`${game.round.incorrectGuesses}`)
+    domUpdates.updatePlayerRoundScore(game.round.turn.currentPlayer);
     $('.guess-inputs').attr("hidden", "true")
     $('form').trigger("reset");
   })
-
-  function updateScores() {
-    $("#player-1-total-score")
-  }
-
-  function revealGuessLetters() {
-    let guess = $('#guess-letter').val().toUpperCase();
-    $("." + guess).removeAttr("hidden");
-  }
 
   $('#solve-puzzle').on('click', function(e) {
     e.preventDefault();
@@ -111,9 +92,8 @@ $(document).ready(() => {
     if (game.round.turn.solvePuzzle(guess, possiblePoints) === true) {
       $('.puzzle-letter').removeClass("hidden");
     }
+    domUpdates.updatePlayerTotalScore(game.round.turn.currentPlayer);
     $('.solve-game').attr("hidden", "true")
     $('form').trigger("reset");
   })
-
-
 });
