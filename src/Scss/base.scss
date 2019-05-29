@@ -177,8 +177,9 @@ main {
   border: 2px black solid;
   grid-area: letters;
   width: 100%;
-  .incorrect-letters-container {
+  .incorrect-letters {
     width: 100%;
+    margin: 10px;
     .incorrect-letters {
       max-width: 10ch;
     }
