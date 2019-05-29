@@ -15,11 +15,18 @@ class Round {
 
   roundEnd() {
     // domUpdates.roundWinner();
-    domUpdates.clearPuzzle();
+    this.clearRoundScores();
+    domUpdates.clearRound();
     let newRound = this.game.createRound();
     console.log("yo");
     // loadPuzzleData();
   }
+
+  clearRoundScores() {
+    return this.players.map(player => player.roundScore = 0);
+  }
+
+
 };
 
 export default Round;

@@ -13,8 +13,11 @@ export default {
     $('.puzzle-section').append(puzzle.formatPuzzle(puzzle));
   },
 
-  clearPuzzle() {
-    $('.puzzle-section').empty()
+  clearRound() {
+    $('.puzzle-section').empty();
+    $('#player-1-round-score').text(0);  
+    $('#player-2-round-score').text(0);
+    $('#player-3-round-score').text(0);
   },
 
   displayCategory(category) {
