@@ -16,11 +16,9 @@ class Round {
 
   roundEnd() {
     alert("You just solved the puzzle!");
-    // domUpdates.showWinner();
     this.clearRoundScores();
     domUpdates.clearRound();
     let newRound = this.game.createRound();
-    console.log("yo");
   }
 
   clearRoundScores() {

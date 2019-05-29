@@ -45,7 +45,6 @@ class Turn {
     let splitPuzzle = this.puzzle.splitAnswer;
     if (splitPuzzle.includes(guess.toUpperCase())) {
       this.currentPlayer.roundScore += possiblePoints;
-      console.log(this.currentPlayer.roundScore)
       return true
     } else {
       this.round.incorrectGuesses.push(guess);
@@ -61,7 +60,6 @@ class Turn {
       this.currentPlayer.totalScore += this.currentPlayer.roundScore;
       domUpdates.updatePlayerTotalScore(this.currentPlayer);
       this.round.roundEnd();
-      console.log("3", this.players)
       return true;
     } else {
       domUpdates.wrongGuess();

@@ -1,13 +1,5 @@
-
-// This is the JavaScript entry file - your code begins here
-
-// An example of how you import jQuery into a JS file if you use jQuery in that file
 import $ from 'jquery';
-
-// An example of how you tell webpack to use a CSS (SCSS) file
 import './Scss/base.scss';
-
-// An example of how you tell webpack to use an image (also need to link to it in the index.html)
 import Game from './Game';
 import domUpdates from './domUpdates';
 
@@ -28,7 +20,7 @@ $(document).ready(() => {
     game = new Game(data);
     game.createPlayers(name1, name2, name3);
     game.createRound();
-    console.log('hey', game);
+    console.log('Game', game);
     domUpdates.hideForm();
     loadPlayerData(name1, name2, name3);
     $('.player-1-backview').removeAttr("hidden")
@@ -84,7 +76,6 @@ $(document).ready(() => {
     e.preventDefault();
     let guess = $('#solve-attempt').val().toUpperCase();
     if (game.round.turn.solvePuzzle(guess) === true) {
-      console.log("update", game.round.puzzle)
       $('.puzzle-letter').removeClass("hidden");
     }
     domUpdates.updatePlayerTotalScore(game.round.turn.currentPlayer);

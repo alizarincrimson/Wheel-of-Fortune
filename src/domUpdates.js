@@ -30,17 +30,14 @@ export default {
 
   vowelError() {
     alert("You don't have enough to buy a vowel!")
-    // $('.vowel-error').css('visibility', 'visible');
   },
 
   wrongLetter() {
     alert("That letter isn't in the puzzle!")
-    // $('.wrong-letter').css('visibility', 'visible');
   },
 
   wrongGuess() {
     alert("That is not the answer to the puzzle!")
-    // $('.wrong-guess').css('visibility', 'visible');
   },
 
   updatePlayerTotalScore(currentPlayer) {
