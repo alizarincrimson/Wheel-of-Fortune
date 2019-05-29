@@ -1,11 +1,17 @@
 import chai from "chai";
 const expect = chai.expect;
 
+import spies from 'chai-spies';
+chai.use(spies);
+
 import Game from "../src/Game";
 import Wheel from "../src/Wheel";
 import Puzzle from "../src/Puzzle";
 import Round from "../src/Round";
 import data from '../src/data';
+import domUpdates from '../src/domUpdates.js';
+
+chai.spy.on(domUpdates, 'loadPuzzleData', () => true);
 
 describe('Game', function() {
 
