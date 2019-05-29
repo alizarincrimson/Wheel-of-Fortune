@@ -34,11 +34,9 @@ class Turn {
     } else if (possiblePoints === 'BANKRUPT') {
       this.currentPlayer.roundScore = 0;
       this.getCurrentPlayer();
-      // domUpdates.switchPlayerPokemon(this.currentPlayer);
       return false;
     } else {
       this.getCurrentPlayer();
-      // domUpdates.switchPlayerPokemon(this.currentPlayer);
       return false;
     }
   }
@@ -53,7 +51,6 @@ class Turn {
       this.round.incorrectGuesses.push(guess);
       domUpdates.wrongLetter();
       this.getCurrentPlayer();
-      // domUpdates.switchPlayerPokemon(this.currentPlayer);
       return false
     }
   }
@@ -69,7 +66,6 @@ class Turn {
     } else {
       domUpdates.wrongGuess();
       this.getCurrentPlayer();
-      domUpdates.switchPlayerPokemon(this.currentPlayer);
       return false
     }
   }
