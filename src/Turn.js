@@ -16,6 +16,7 @@ class Turn {
     if (this.currentPlayer === undefined) {
       this.currentPlayer = this.players[0];
     }
+    domUpdates.switchPlayerPokemon(this.currentPlayer);
   }
 
   buyVowel(vowel) {
@@ -33,11 +34,9 @@ class Turn {
     } else if (possiblePoints === 'BANKRUPT') {
       this.currentPlayer.roundScore = 0;
       this.getCurrentPlayer();
-      domUpdates.switchPlayerPokemon(this.currentPlayer);
       return false;
     } else {
       this.getCurrentPlayer();
-      domUpdates.switchPlayerPokemon(this.currentPlayer);
       return false;
     }
   }
@@ -46,12 +45,12 @@ class Turn {
     let splitPuzzle = this.puzzle.splitAnswer;
     if (splitPuzzle.includes(guess.toUpperCase())) {
       this.currentPlayer.roundScore += possiblePoints;
+      console.log(this.currentPlayer.roundScore)
       return true
     } else {
       this.round.incorrectGuesses.push(guess);
-      // domUpdates.wrongLetter();
+      domUpdates.wrongLetter();
       this.getCurrentPlayer();
-      domUpdates.switchPlayerPokemon(this.currentPlayer);
       return false
     }
   }
@@ -59,14 +58,14 @@ class Turn {
   solvePuzzle(guess) {
     let puzzleAnswer = this.puzzle.correctAnswer;
     if (guess.toUpperCase() === puzzleAnswer) {
-      this.currentPlayer.totalScore += this.currentPlayer.roundScore; 
+      this.currentPlayer.totalScore += this.currentPlayer.roundScore;
       domUpdates.updatePlayerTotalScore(this.currentPlayer);
       this.round.roundEnd();
+      console.log("3", this.players)
       return true;
     } else {
-      // domUpdates.wrongGuess();
+      domUpdates.wrongGuess();
       this.getCurrentPlayer();
-      domUpdates.switchPlayerPokemon(this.currentPlayer);
       return false
     }
   }
