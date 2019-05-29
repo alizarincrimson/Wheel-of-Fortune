@@ -15,8 +15,8 @@ Should you be interesting in running this project on your local machine, please 
 
 ## Pokeball of Fortune Images
 
-[Imgur](https://i.imgur.com/502GA31.png)
-[Imgur](https://i.imgur.com/dYBc88e.png)
-[Imgur](https://i.imgur.com/RClzjC6.png)
-[Imgur](https://i.imgur.com/DJmkJDF.png)
+![Imgur](https://i.imgur.com/502GA31.png)
+![Imgur](https://i.imgur.com/dYBc88e.png)
+![Imgur](https://i.imgur.com/RClzjC6.png)
+![Imgur](https://i.imgur.com/DJmkJDF.png)
 
