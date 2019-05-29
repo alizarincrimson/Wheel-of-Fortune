@@ -23,6 +23,7 @@ h1 {
 
 h2 {
   font-size: 1em;
+  text-align: center;
 }
 
 label, input, button {
@@ -50,17 +51,17 @@ input {
 }
 
 #start-game {
-  height: 42px;
-  width: 25%;
+  height: 100%;
+  width: 250px;
   font-size: 18px;
-  border: 4px solid black;
+  border: 2px solid black;
   margin: auto;
   background-color: darkgray;
   color: white;
 }
 
 .player-av {
-  width: 30%;
+  width: 20%;
 }
 
 .wheel-section {
@@ -124,14 +125,14 @@ main {
 }
 
 .player-section {
-  width: 300px;
   grid-area: player;
+  width: 300px;
   div {
     text-align: center;
-    border: 4px black solid;
+    border: 2px black solid;
     display: flex;
     flex-wrap: wrap;
-    height: 150px;
+    height: 170px;
     justify-content: center;
     padding: 10px;
   }
@@ -159,10 +160,15 @@ main {
 }
 
 .guessed-letter-bank {
-  border: 1px black solid;
+  border: 2px black solid;
   grid-area: letters;
-  padding: 5px;
   width: 100%;
+  .incorrect-letters-container {
+    width: 100%;
+    .incorrect-letters {
+      max-width: 10ch;
+    }
+  }
 }
 
 .message-section {
@@ -185,9 +191,9 @@ main {
 }
 
 .buttons-section {
-  border: 3px black solid;
+  border: 2px black solid;
   grid-area: buttons;
-  width: 230px;
+  width: 100%;
   .player-buttons {
     display: flex;
     flex-wrap: wrap;
@@ -197,9 +203,22 @@ main {
 
 .guess-inputs {
   grid-area: guess;
-  border: 1px black solid;
+  border: 2px black solid;
 }
 
 h2 {
   width: 100%;
+}
+
+.current-player {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  .player-1-backview,
+  .player-2-backview,
+  .player-3-backview {
+    height: 100px;
+    margin: auto;
+    width: 100px;
+  }
 }
