@@ -7,7 +7,6 @@ import Wheel from "./Wheel";
 class Game {
   constructor(data) {
     this.data = data;
-    // console.log("construct data: ", this.data)
     this.players = [];
     this.numberOfRounds = 0;
     this.puzzleSet = [];
@@ -31,7 +30,6 @@ class Game {
     domUpdates.loadPuzzleData(this.puzzle);
     this.round = newRound;
     this.numberOfRounds++;
-    // console.log("game.numofRounds: ", this.numberOfRounds++)
   }
 
   getRandomPuzzles() {
@@ -47,19 +45,14 @@ class Game {
 
   getSinglePuzzle() {
     this.getRandomPuzzles(this.data);
-    // console.log("game - randomVals: ", this.getRandomPuzzles(this.data))
     let newPuzzle = new Puzzle(this.puzzleSet.pop());
     this.puzzle = newPuzzle;
-    // console.log("game - newPuzz: ", puzzle)
   }
 
   getWheel() {
     let wheel = new Wheel(this.data);
-    // console.log('game - wheelClass: ', wheel);
     wheel.getWheelValues();
     this.wheel = wheel;
-    // let shuffledWheelValues = wheel.wheelValues
-    // console.log('game - wheelValues: ', this.wheel);
   }
 
   determineWinner() {
@@ -68,11 +61,6 @@ class Game {
       console.log("highscore", highScore);
       let winner = highScore[0];
     }
-  }
-
-  createBonusRound(winner) {
-    // this will be triggered by the determineWinner method.
-    // It should instatiate a bonus round of some sort.
   }
 }
 

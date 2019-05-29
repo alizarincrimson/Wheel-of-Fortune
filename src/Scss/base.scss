@@ -193,21 +193,6 @@ main {
   padding: 10px;
 }
 
-// .wrong-letter {
-//   visibility: hidden;
-// }
-
-// .vowel-error {
-//   visibility: hidden;
-// }
-
-// .wrong-guess {
-//   visibility: hidden;
-// }
-
-// .winner-msg {
-//   visibility: hidden;
-// }
 
 .buttons-section {
   border: 2px black solid;
@@ -245,4 +230,8 @@ main {
 
 #submit-solve {
   width: 65%;
+}
+
+#solve-attempt {
+  width: 84%;
 }
