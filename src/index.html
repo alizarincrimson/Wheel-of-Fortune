@@ -31,22 +31,22 @@
         <h2 class="player-name-1"></h2>
         <img class="player-av" src="https://img.pokemondb.net/sprites/black-white/anim/normal/charmander.gif"
         alt="generation 5 animated Charmander from Pokémon series">
-        <p>Total Score: <span id="player-1-total-score"></span></p>
         <p>Round Score: <span id="player-1-round-score"></span></p>
+        <p>Total Score: <span id="player-1-total-score"></span></p>
       </div>
       <div class="player-2-card">
         <h2 class="player-name-2"></h2>
         <img class="player-av" src="https://img.pokemondb.net/sprites/black-white/anim/normal/bulbasaur.gif"
         alt="generation 5 animated Bulbasaur from Pokémon series">
-        <p>Total Score: <span id="player-2-total-score"></span></p>
         <p>Round Score: <span id="player-2-round-score"></span></p>
+        <p>Total Score: <span id="player-2-total-score"></span></p>
       </div>
       <div class="player-3-card">
         <h2 class="player-name-3"></h2>
         <img class="player-av" src="https://img.pokemondb.net/sprites/black-white/anim/normal/squirtle.gif"
         alt="generation 5 animated Squirtle from Pokémon series">
-        <p>Total Score: <span id="player-3-total-score"></span></p>
         <p>Round Score: <span id="player-3-round-score"></span></p>
+        <p>Total Score: <span id="player-3-total-score"></span></p>
       </div>
     </section>
     <section class="current-player">
@@ -54,22 +54,22 @@
       <img class="player-2-backview" src="https://img.pokemondb.net/sprites/black-white/anim/back-normal/bulbasaur.gif" alt="bulbasaur back view" hidden>
       <img class="player-3-backview" src="https://img.pokemondb.net/sprites/black-white/anim/back-normal/squirtle.gif" alt="squirtle back view" hidden>
     </section>
-    <section class="message-section">
+    <!-- <section class="message-section">
       <p class="wrong-guess">Sorry, that guess isn't correct!</p>
       <p class="wrong-letter">Letter not found in puzzle!</p>
       <p class="vowel-error">You don't have enough to buy a vowel!</p>
       <p class="winner-msg">You just won the round!</p>
-    </section>
+    </section> -->
     <section class="guessed-letter-bank">
         <h2>Guessed Letters:</h2>
         <p class="incorrect-letters"></p>
     </section>
     <section class="buttons-section">
       <form class="player-buttons">
-        <button id="spin-wheel">Spin Wheel</button>
-        <button id="buy-vowel" onsubmit="">Buy Vowel</button>
-        <button id="solve-puzzle">Solve Puzzle</button>
-        <button id="new-game">Quit & Restart game</button>
+        <button class="ingame-btn" id="spin-wheel">Spin Wheel</button>
+        <button class="ingame-btn" id="buy-vowel" onsubmit="">Buy Vowel</button>
+        <button class="ingame-btn" id="solve-puzzle">Solve Puzzle</button>
+        <button class="ingame-btn" id="new-game">Quit & Restart game</button>
       </form>
       <!-- <form class="buy-vowel-inputs" hidden>
         <button id=""></button>
@@ -79,14 +79,14 @@
         <h2>Guess A Letter:</h2>
           <form class="guess-letter-inputs">
             <input id="guess-letter" maxlength="1" pattern="b|c|d|f|g|h|j|k|l|m|n|p|q|r|s|t|v|w|x|y|z" required>
-            <button id="submit-guess">Submit Guess</button>
+            <button class="ingame-btn" id="submit-guess">Submit Guess</button>
           </form>
     </section>
     <section class="solve-game" hidden>
         <h2>Solve the Puzzle:</h2>
           <form class="solve-inputs">
             <input id="solve-attempt" pattern="[A-Za-z]" required>
-            <button id="submit-solve">Submit Guess</button>
+            <button class="ingame-btn" id="submit-solve">Submit Guess</button>
           </form>
     </section>
   <!-- Do not include the index.js or main.bundle.js file here - it is done automatically by the webpack server -->

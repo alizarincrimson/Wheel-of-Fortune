@@ -6,6 +6,7 @@
 
 * {
   font-family: $mainFont;
+  box-sizing: border-box;
 }
 
 body {
@@ -24,12 +25,14 @@ h1 {
 h2 {
   font-size: 1em;
   text-align: center;
+  width: 100%;
 }
 
 label, input, button {
   margin: 5px;
   width: 90%;
   display: block;
+  padding: 8px;
 }
 
 label {
@@ -60,8 +63,16 @@ input {
   color: white;
 }
 
+.ingame-btn {
+  font-size: 16px;
+  border: 1px solid black;
+  margin: 4px;
+  background-color: white;
+  color: black;
+}
+
 .player-av {
-  width: 20%;
+  width: 25%;
 }
 
 .wheel-section {
@@ -132,11 +143,14 @@ main {
     border: 2px black solid;
     display: flex;
     flex-wrap: wrap;
-    height: 170px;
+    height: 100%;
     justify-content: center;
     padding: 10px;
   }
   p {
+    font-size: 13px;
+    margin: 4px 0px 2px 0px;
+    padding: 2px 0px 0px 0px;
     width: 100%;
   }
 }
@@ -178,21 +192,21 @@ main {
   padding: 10px;
 }
 
-.wrong-letter {
-  visibility: hidden;
-}
+// .wrong-letter {
+//   visibility: hidden;
+// }
 
-.vowel-error {
-  visibility: hidden;
-}
+// .vowel-error {
+//   visibility: hidden;
+// }
 
-.wrong-guess {
-  visibility: hidden;
-}
+// .wrong-guess {
+//   visibility: hidden;
+// }
 
-.winner-msg {
-  visibility: hidden;
-}
+// .winner-msg {
+//   visibility: hidden;
+// }
 
 .buttons-section {
   border: 2px black solid;
@@ -210,10 +224,6 @@ main {
   border: 2px black solid;
 }
 
-h2 {
-  width: 100%;
-}
-
 .current-player {
   display: flex;
   align-items: flex-end;
@@ -221,8 +231,7 @@ h2 {
   .player-1-backview,
   .player-2-backview,
   .player-3-backview {
-    height: 100px;
     margin: auto;
-    width: 100px;
+    width: 125px;
   }
 }
