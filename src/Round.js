@@ -13,13 +13,14 @@ class Round {
     this.incorrectGuesses = [];
   }
 
+
   roundEnd() {
-    // domUpdates.roundWinner();
+    alert("You just solved the puzzle!")
+    // domUpdates.showWinner();
     this.clearRoundScores();
     domUpdates.clearRound();
     let newRound = this.game.createRound();
     console.log("yo");
-    // loadPuzzleData();
   }
 
   clearRoundScores() {

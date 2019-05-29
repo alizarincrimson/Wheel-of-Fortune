@@ -31,8 +31,6 @@ class Puzzle {
     return blockLetter;
   }
 
-  //put in domUpdates
-
   setupRound() {
     // show this.puzzle.category on the DOM
     // count number of words, count letters
