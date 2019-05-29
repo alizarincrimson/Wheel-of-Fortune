@@ -1,6 +1,6 @@
 # Pokeball of Fortune: A GameTime Adaptation of Wheel-of-Fortune
 
-By Antonio Fry, Hanna Hyde, and Ann Cerveny
+By Antonio Fry, Hannah Hyde, and Ann Cerveny
 
 
 GameTime is the third project of Mod 2 in the Front-End Engineering 1903 cohort at the Turing School of Software and Design. It is a three-person group project - a collaborative effort between Ann, Hannah, and Antonio - that uses JavaScript, jQuery, HTML, CSS, the Mocha test framework, and the Chai assertion library. We were assigned the game format of Wheel of Fortune, and adapted it to a Pokemon theme that requires 3 players, and run 4 rounds before declaring a winner. The emphasis of this project resided in the interaction between JavaScript classes and objects, manipulating the DOM with jQuery, developing our skills in testing, and working in a group. 
