@@ -24,6 +24,7 @@ class Game {
   }
 
   createRound() {
+    this.determineWinner();
     this.getSinglePuzzle();
     this.getWheel();
     let newRound = new Round(this, this.puzzle, this.players, this.wheel);
@@ -62,10 +63,11 @@ class Game {
   }
 
   determineWinner() {
-    // Once and if this.round is greater than 4,
-    // determine the winner by the highest score.
-    // should return winner.
-    // invokes bonus round.
+    if (this.numberOfRounds > 4) {
+      let highScore = this.players.sort((a,b) => b.totalScore - a.totalScore);
+      console.log("highscore", highScore);
+      let winner = highScore[0];
+    }
   }
 
   createBonusRound(winner) {

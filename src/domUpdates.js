@@ -24,16 +24,23 @@ export default {
     $('.category-section').text(category);
   },
 
+  showWinner() {
+    $('.winner-msg').css('visibility', 'visible');
+  },
+
   vowelError() {
-    $('.vowel-error').css('visibility', 'visible');
+    alert("You don't have enough to buy a vowel!")
+    // $('.vowel-error').css('visibility', 'visible');
   },
 
   wrongLetter() {
-    $('.wrong-letter').css('visibility', 'visible');
+    alert("That letter isn't in the puzzle!")
+    // $('.wrong-letter').css('visibility', 'visible');
   },
 
   wrongGuess() {
-    $('.wrong-guess').css('visibility', 'visible');
+    alert("That is not the answer to the puzzle!")
+    // $('.wrong-guess').css('visibility', 'visible');
   },
 
   updatePlayerTotalScore(currentPlayer) {
