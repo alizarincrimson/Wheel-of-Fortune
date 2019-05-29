@@ -1,6 +1,9 @@
 import chai from 'chai';
 const expect = chai.expect;
 
+import spies from 'chai-spies';
+chai.use(spies);
+
 import data from "../src/data";
 import Turn from "../src/Turn";
 import Game from "../src/Game";
@@ -8,6 +11,11 @@ import Player from "../src/Player";
 import Wheel from "../src/Wheel";
 import Puzzle from "../src/Puzzle";
 import Round from "../src/Round";
+import domUpdates from '../src/domUpdates.js';
+
+chai.spy.on(domUpdates, 'updatePlayerTotalScore', () => true);
+chai.spy.on(domUpdates, 'wrongLetter', () => true);
+chai.spy.on(domUpdates, 'switchPlayerPokemon', () => true);
 
 describe('Turn', function() {
 
@@ -53,9 +61,9 @@ describe('Turn', function() {
     expect(turn.currentPlayer.roundScore).to.equal(100);
   });
 
-  it('should return true if the player solves th puzzle correctly', function() {
-    expect(turn.solvePuzzle('Armchair', 100)).to.equal(true);
-    expect(turn.currentPlayer.roundScore).to.equal(100);
+  it('should return true if the player solves the puzzle correctly', function() {
+    expect(turn.solvePuzzle('Armchair')).to.equal(true);
+    expect(turn.solvePuzzle('Armhair')).to.equal(false);
   });
 
 });
